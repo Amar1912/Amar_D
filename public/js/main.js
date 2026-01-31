@@ -2,6 +2,50 @@
    PREMIUM PORTFOLIO - MAIN JAVASCRIPT
    =================================== */
 
+// Delegated resilient handler: attach document-level listeners so the menu-toggle works
+// even if elements are added later or scripts run in different orders. Also add
+// keyboard support and ARIA attributes for accessibility.
+(function(){
+  try {
+    function toggleMobileMenu(mt) {
+      const mn = document.querySelector('.mobile-nav');
+      if (!mt) return;
+      const isActive = mt.classList.toggle('active');
+      if (mn) mn.classList.toggle('active');
+      document.body.style.overflow = (mn && mn.classList.contains('active')) ? 'hidden' : '';
+      mt.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      console.info('[menu-delegate] toggled', { active: isActive });
+    }
+
+    document.addEventListener('click', function(e){
+      const mt = e.target.closest('.menu-toggle');
+      if (!mt) return;
+      toggleMobileMenu(mt);
+    }, false);
+
+    document.addEventListener('keydown', function(e){
+      // Toggle on Enter or Space when focused on menu-toggle
+      if (e.key === 'Enter' || e.key === ' ') {
+        const mt = document.activeElement;
+        if (mt && mt.classList && mt.classList.contains('menu-toggle')) {
+          e.preventDefault();
+          toggleMobileMenu(mt);
+        }
+      }
+    }, false);
+
+    // If a menu-toggle exists at parse time, ensure accessibility attributes
+    const mtInit = document.querySelector('.menu-toggle');
+    if (mtInit) {
+      mtInit.setAttribute('role', 'button');
+      mtInit.setAttribute('tabindex', '0');
+      mtInit.setAttribute('aria-expanded', mtInit.classList.contains('active') ? 'true' : 'false');
+    }
+  } catch (err) {
+    console.warn('[menu-delegate] error attaching handlers', err);
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
   
   // ===================================
@@ -41,19 +85,166 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
   
   if (menuToggle && mobileNav) {
-    menuToggle.addEventListener('click', function() {
-      menuToggle.classList.toggle('active');
+    console.info('[main] menuToggle/mobileNav found', { menuToggle: !!menuToggle, mobileNav: !!mobileNav, mobileNavLinks: mobileNavLinks.length });
+
+    // Ensure accessibility attributes
+    menuToggle.setAttribute('role', 'button');
+    menuToggle.setAttribute('tabindex', '0');
+    menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active') ? 'true' : 'false');
+
+    function toggleMobileMenu(e) {
+      console.info('[main] toggleMobileMenu');
+      const isActive = menuToggle.classList.toggle('active');
       mobileNav.classList.toggle('active');
       document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+      menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    }
+
+    menuToggle.addEventListener('click', function(e) {
+      console.info('[debug-menu] menu-toggle clicked');
+      toggleMobileMenu(e);
     });
-    
-    // Close mobile menu when link is clicked
+
+    // Also support touch devices; do NOT prevent default here (prevents link navigation on some browsers)
+    menuToggle.addEventListener('touchstart', function(e) { 
+      console.info('[debug-menu] menu-toggle touchstart');
+      toggleMobileMenu(e); 
+    }, { passive: true });
+
+    // Keyboard support (Enter/Space)
+    menuToggle.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        console.info('[debug-menu] menu-toggle keyboard toggle', e.key);
+        toggleMobileMenu(e);
+      }
+    });
+
+    // Close mobile menu when link is clicked (direct listeners)
     mobileNavLinks.forEach(function(link) {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function(e) {
+        console.info('[debug-menu] mobile-nav link clicked', { href: this.getAttribute('href') });
+        // Close menu UI
         menuToggle.classList.remove('active');
         mobileNav.classList.remove('active');
         document.body.style.overflow = '';
+        menuToggle.setAttribute('aria-expanded', 'false');
+
+        // Fallback: If the browser doesn't navigate (sometimes happens in responsive emulation),
+        // force navigation after a short delay so the link always works in tests.
+        const href = this.href;
+        const target = this.getAttribute('target');
+        setTimeout(function() {
+          try {
+            if (target === '_blank') {
+              window.open(href, '_blank');
+            } else if (location.href !== href) {
+              window.location.assign(href);
+            }
+          } catch (err) {
+            console.warn('[debug-menu] forced navigation failed', err);
+          }
+        }, 80);
       });
+      // also ensure touch taps close the menu but do not prevent navigation
+      link.addEventListener('touchstart', function() {
+        // no preventDefault here
+        menuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }, { passive: true });
+    });
+
+    // Delegated backup handler: catch mobile nav link clicks even if listeners aren't attached
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('.mobile-nav-links a');
+      if (!link) return;
+
+      console.info('[debug-menu] delegated mobile-nav link click', { href: link.href, active: mobileNav.classList.contains('active') });
+
+      // Respect modifier keys (open in new tab etc.)
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      // Close UI immediately
+      menuToggle.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+      menuToggle.setAttribute('aria-expanded', 'false');
+
+      // Force navigation quickly when in responsive emulation where default navigation may be suppressed
+      const href = link.href;
+      const target = link.getAttribute('target');
+      setTimeout(function() {
+        try {
+          if (target === '_blank') {
+            window.open(href, '_blank');
+          } else if (location.href !== href) {
+            window.location.assign(href);
+          } else {
+            console.info('[debug-menu] same href, no navigation needed');
+          }
+        } catch (err) {
+          console.warn('[debug-menu] delegated forced navigation failed', err);
+        }
+      }, 40);
+    });
+
+    // Pointer-debug and fallback: if a pointerdown occurs on the toggle but the UI doesn't change,
+    // force the toggle after a short delay. This addresses cases where desktop responsive emulation
+    // or some environments suppress the click navigation while still sending pointer events.
+    document.addEventListener('pointerdown', function(e) {
+      const mt = e.target.closest('.menu-toggle');
+      if (!mt) return;
+      console.info('[pointer-debug] pointerdown on menu-toggle');
+
+      // If not already active shortly after the event, activate UI
+      setTimeout(function() {
+        try {
+          const mn = document.querySelector('.mobile-nav');
+          if (!mt.classList.contains('active')) {
+            console.warn('[pointer-debug] fallback: activating menu');
+            mt.classList.add('active');
+            if (mn) mn.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            mt.setAttribute('aria-expanded', 'true');
+          }
+        } catch (err) {
+          console.warn('[pointer-debug] fallback error', err);
+        }
+      }, 60);
+    });
+
+    // Observe class changes for debugging
+    try {
+      const mtObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(m) {
+          if (m.attributeName === 'class') {
+            console.info('[observer] menu-toggle class changed', m.target.className);
+          }
+        });
+      });
+      const mnObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(m) {
+          if (m.attributeName === 'class') {
+            console.info('[observer] mobile-nav class changed', m.target.className);
+          }
+        });
+      });
+      if (menuToggle) mtObserver.observe(menuToggle, { attributes: true });
+      if (mobileNav) mnObserver.observe(mobileNav, { attributes: true });
+    } catch (err) {
+      console.warn('[observer] failed to attach mutation observers', err);
+    }
+
+    // Close mobile menu if click occurs outside of it
+    document.addEventListener('click', function(e) {
+      if (mobileNav.classList.contains('active') && !mobileNav.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        mobileNav.classList.remove('active');
+        document.body.style.overflow = '';
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
     });
   }
   
@@ -76,6 +267,94 @@ document.addEventListener('DOMContentLoaded', function() {
   
   revealElements.forEach(function(el) {
     revealObserver.observe(el);
+  });
+
+  // When data is loaded dynamically (via portfolio.json), re-attach observers & handlers
+  document.addEventListener('portfolio-data-loaded', function(e) {
+    // re-observe reveal elements
+    const newReveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    newReveals.forEach(function(el) {
+      if (!el.classList.contains('visible')) revealObserver.observe(el);
+    });
+
+    // re-observe skill cards
+    const newSkillCards = document.querySelectorAll('.skill-card');
+    newSkillCards.forEach(function(card) {
+      card.classList.add('reveal');
+      skillObserver && skillObserver.observe(card);
+    });
+
+    // re-observe stats counters
+    const newStatNumbers = document.querySelectorAll('.stat-number');
+    newStatNumbers.forEach(function(num) {
+      if (num.hasAttribute('data-count')) counterObserver && counterObserver.observe(num);
+    });
+
+    // re-observe skill progress items and animate fills
+    const newSkillProgressItems = document.querySelectorAll('.skill-progress-item');
+    if (newSkillProgressItems.length) {
+      if (typeof skillProgressObserver !== 'undefined') {
+        newSkillProgressItems.forEach(function(item) {
+          skillProgressObserver.observe(item);
+        });
+      } else {
+        const tmpObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const progressFill = entry.target.querySelector('.skill-progress-fill');
+              const targetWidth = progressFill && progressFill.getAttribute('data-progress');
+              if (progressFill && targetWidth !== null) {
+                progressFill.style.width = targetWidth + '%';
+                entry.target.classList.add('animated');
+              }
+              tmpObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        newSkillProgressItems.forEach(function(item) { tmpObserver.observe(item); });
+      }
+    }
+
+    // re-observe lazy images
+    const newLazy = document.querySelectorAll('img[data-src]');
+    newLazy.forEach(function(img) {
+      imageObserver && imageObserver.observe(img);
+    });
+
+    // add hover handlers to new project cards
+    const newProjectCards = document.querySelectorAll('.project-card');
+    newProjectCards.forEach(function(card) {
+      card.addEventListener('mouseenter', function() { this.style.zIndex = '10'; });
+      card.addEventListener('mouseleave', function() { this.style.zIndex = '1'; });
+    });
+
+    // re-attach cursor hover behavior if cursor exists
+    const cursor = document.querySelector('.custom-cursor');
+    if (cursor) {
+      const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-card, input, textarea');
+      interactiveElements.forEach(function(el) {
+        el.addEventListener('mouseenter', function() { cursor.classList.add('hover'); });
+        el.addEventListener('mouseleave', function() { cursor.classList.remove('hover'); });
+      });
+    }
+
+    // re-initialize timeline items observer (minimal replicating logic)
+    const timelineEl = document.querySelector('.timeline');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    if (timelineEl && timelineItems.length) {
+      const localTimelineObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            localTimelineObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '0px 0px -100px 0px' });
+
+      timelineItems.forEach(function(item) {
+        localTimelineObserver.observe(item);
+      });
+    }
   });
   
   // ===================================
@@ -335,6 +614,12 @@ document.addEventListener('DOMContentLoaded', function() {
         cursor.classList.remove('hover');
       });
     });
+
+    // If portfolio data was loaded before this script executed, trigger the event so
+    // dynamic elements get observed and animated correctly (avoids race conditions).
+    if (window.__portfolioDataLoaded) {
+      document.dispatchEvent(new CustomEvent('portfolio-data-loaded'));
+    }
   }
   
   // ===================================

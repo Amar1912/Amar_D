@@ -1,0 +1,263 @@
+{
+  "site": {
+    "name": "Amar Morgan",
+    "role": "Creative Developer & Designer",
+    "tagline": "Creative Developer & Designer crafting thoughtful digital experiences.",
+    "meta": {
+      "title": "Amar Morgan | Creative Developer & Designer",
+      "description": "Creative Developer & Designer crafting digital experiences that inspire and engage.",
+      "keywords": "portfolio, developer, designer, creative, web development",
+      "author": "Amar Morgan",
+      "themeColor": "#FDF6F0"
+    }
+  },
+
+  "hero": {
+    "tag": "Available for Projects",
+    "name": "Amar Morgan",
+    "subtitle": "Creative Developer & Designer crafting thoughtful digital experiences that blend design with robust engineering.",
+    "buttons": {
+      "primary": { "text": "View Projects", "link": "projects.html" },
+      "secondary": { "text": "Get in Touch", "link": "contact.html" }
+    }
+  },
+
+  "intro": {
+    "tag": "About Me",
+    "title": "Building digital products with purpose and precision.",
+    "body": "I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering.",
+    "ctaText": "Read My Story",
+    "ctaLink": "journey.html"
+  },
+
+  "about": {
+    "tag": "Hello",
+    "name": "Alex Morgan",
+    "p1": "I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.",
+    "p2": "Currently based in San Francisco, I've had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and digital product studios.",
+    "p3": "In my spare time, I'm usually exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee while sketching out new ideas. I believe in continuous learning and pushing the boundaries of what's possible on the web.",
+    "ctaText": "Let's Connect",
+    "ctaLink": "contact.html"
+  },
+
+  "_schema": {
+    "site": "Object. Basic site metadata: name, role, tagline, meta (title/description/keywords).",
+    "hero": "Object. Hero section: tag, name, subtitle, buttons (primary/secondary).",
+    "intro": "Object. Short intro used on home page: tag, title, body, ctaText, ctaLink.",
+    "about": "Object. Full About/Journey intro used on Journey page: tag, name, p1, p2, p3, ctaText, ctaLink.",
+    "stats": "Array. Stats displayed on home (label, count, optional suffix).",
+    "skills": "Object. skills.cards (array of cards) and skills.progress (array of categories with items).",
+    "timeline": "Array. Each item: year, title, description (rendered on Journey page timeline).",
+    "resume": "Object. experience array and education array.",
+    "projects": "Array. Each project: id (slug), title, category, shortDescription, fullDescription, problem, solution, impact (array), techStack (array), images (array), liveUrl (optional), repoUrl (optional), featured (bool).",
+    "testimonials": "Array. Each testimonial: name, role, quote, avatar. Use testimonials.preview (front-page) or testimonials.all (full page) via data-bind.",
+    "certifications": "Array. Each certification: id, title, issuingOrganization, year, description, credentialUrl (optional), logo (optional), category (Cloud/Programming/Data/Design).",
+    "contact": "Object. Contact details: email, emailLink, location, availability, cta.",
+    "socialLinks": "Array. Social links rendered in footer and contact: platform, url.",
+    "footer": "Object. Footer strings like copyright and note.",
+    "cta": "Object. Global CTA section with title, body, primary and secondary actions."
+  },
+
+  "stats": [
+    { "label": "Years Experience", "count": 5, "suffix": "+" },
+    { "label": "Projects Completed", "count": 50, "suffix": "+" },
+    { "label": "Happy Clients", "count": 30, "suffix": "+" }
+  ],
+
+  "skills": {
+    "cards": [
+      { "title": "Web Development", "desc": "Building performant, accessible websites and web applications.", "icon": "code" },
+      { "title": "UI/UX Design", "desc": "Creating intuitive interfaces and seamless user experiences.", "icon": "design" },
+      { "title": "Full Stack", "desc": "End-to-end development from database design to frontend polish.", "icon": "stack" },
+      { "title": "Performance", "desc": "Optimizing applications for speed and efficiency.", "icon": "speed" }
+    ],
+    "progress": [
+      {
+        "category": "Frontend Development",
+        "items": [
+          { "name": "React / Next.js", "percent": 95 },
+          { "name": "TypeScript", "percent": 90 },
+          { "name": "CSS / Tailwind", "percent": 92 },
+          { "name": "Animation (GSAP/Framer)", "percent": 85 }
+        ]
+      },
+      {
+        "category": "Backend & Database",
+        "items": [
+          { "name": "Node.js / Express", "percent": 88 },
+          { "name": "PostgreSQL / MongoDB", "percent": 85 },
+          { "name": "GraphQL / REST APIs", "percent": 90 },
+          { "name": "Python", "percent": 75 }
+        ]
+      }
+    ]
+  },
+
+  "timeline": [
+    { "year": "2018 — The Beginning", "title": "Discovering the Craft", "description": "Started my journey with HTML, CSS and JavaScript; built first websites and enrolled in CS." },
+    { "year": "2019 — First Steps", "title": "Junior Developer", "description": "Worked at a small agency, delivered client projects and learned React and modern CSS." },
+    { "year": "2020 — Growth", "title": "Frontend Developer", "description": "Built scalable apps, led frontend architecture for SaaS product." },
+    { "year": "2021 — Expansion", "title": "Full Stack Developer", "description": "Expanded into backend, databases, and cloud infrastructure." },
+    { "year": "2023 — Leadership", "title": "Senior Developer", "description": "Led technical initiatives and mentored engineers." },
+    { "year": "2024 — Present", "title": "Independent Creative Developer", "description": "Working independently on select, high-impact projects." }
+  ],
+
+  "github": {
+    "repos": 48,
+    "contributions": 1247,
+    "stars": 312,
+    "streak": 156
+  },
+
+  "resume": {
+    "experience": [
+      { "company": "Creative Studio", "role": "Senior Developer", "from": "2023", "to": "Present", "desc": "Led frontend for high-profile client projects." },
+      { "company": "TechStart Inc.", "role": "Frontend Developer", "from": "2020", "to": "2023", "desc": "Built scalable web apps and dashboards." }
+    ],
+    "education": [
+      { "institution": "State University", "degree": "B.S. Computer Science", "from": "2015", "to": "2019" }
+    ]
+  },
+
+  "projects": [
+    {
+      "id": "analytics-dashboard",
+      "title": "Analytics Dashboard",
+      "category": "Web Application",
+      "shortDescription": "A comprehensive analytics platform for real-time data visualization and business insights.",
+      "fullDescription": "Analytics Dashboard is a data-first web application providing customizable dashboards, interactive charts and advanced filtering for enterprise analytics teams.",
+      "problem": "Customers lacked a unified view of KPI data across services.",
+      "solution": "Built a modular dashboard with real-time streams, reusable widgets, and exportable reports.",
+      "impact": ["Reduced reporting time by 60%", "Improved decision-making with real-time KPIs"],
+      "techStack": ["React", "TypeScript", "D3.js", "GraphQL"],
+      "images": ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop"],
+      "liveUrl": "#",
+      "repoUrl": "https://github.com/Amar1912/analytics-dashboard",
+      "featured": true
+    },
+    {
+      "id": "luxe-marketplace",
+      "title": "Luxe Marketplace",
+      "category": "E-Commerce",
+      "shortDescription": "Premium e-commerce experience with seamless checkout and personalized recommendations.",
+      "fullDescription": "Luxe Marketplace is designed for high-end retailers with personalized storefronts, advanced inventory sync, and a frictionless checkout flow.",
+      "problem": "Site conversions were low due to slow checkout and limited personalization.",
+      "solution": "Implemented server-side rendering, personalized recommendations, and a streamlined checkout path.",
+      "impact": ["Increased conversion rate by 18%", "Average order value up by 12%"],
+      "techStack": ["Next.js", "Stripe", "Tailwind CSS"],
+      "images": ["https://images.unsplash.com/photo-1555421689-491a97ff2040?w=1200&h=800&fit=crop"],
+      "liveUrl": "#",
+      "repoUrl": "https://github.com/Amar1912/luxe-marketplace",
+      "featured": true
+    },
+    {
+      "id": "finflow",
+      "title": "FinFlow Banking",
+      "category": "Mobile App",
+      "shortDescription": "Modern banking app with intuitive UX and real-time monitoring.",
+      "fullDescription": "FinFlow is a mobile-first banking experience with biometric login, instant transfers, and contextual notifications.",
+      "problem": "Customers had difficulty with transaction visibility and authentication.",
+      "solution": "Designed secure biometric flows and a unified feed for transactions and notifications.",
+      "impact": ["Increased daily active users by 25%", "Improved retention metrics"],
+      "techStack": ["React Native", "Node.js", "PostgreSQL"],
+      "images": ["https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop"],
+      "liveUrl": "#",
+      "repoUrl": "https://github.com/Amar1912/finflow",
+      "featured": true
+    },
+    {
+      "id": "artisan-studio",
+      "title": "Artisan Creative Studio",
+      "category": "Brand Website",
+      "shortDescription": "Award-winning portfolio for a creative agency with immersive animations.",
+      "fullDescription": "An immersive portfolio site combining 3D visuals and a content-managed backend for editorial updates.",
+      "problem": "Agency needed a flexible showcase for evolving case studies.",
+      "solution": "Delivered a fast, editor-friendly site with custom CMS integration and high-performance assets.",
+      "impact": ["Won 2 design awards", "Improved content velocity"],
+      "techStack": ["Three.js", "GSAP", "Sanity"],
+      "images": ["https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1200&h=800&fit=crop"],
+      "liveUrl": "#",
+      "repoUrl": "https://github.com/Amar1912/artisan-studio",
+      "featured": false
+    }
+  ],
+
+  "testimonials": [
+    { "name": "David Chen", "role": "CEO, TechStart Inc.", "quote": "Amar transformed our vision into reality. The attention to detail and commitment to quality is exceptional.", "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" },
+    { "name": "Sarah Martinez", "role": "Product Manager, Innovate Co.", "quote": "Working with Amar was a game-changer. Clean code, clear communication, innovative solutions.", "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" },
+    { "name": "Michael Johnson", "role": "Lead Designer, Creative Studio", "quote": "One of the most talented developers I've collaborated with.", "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" }
+  ],
+
+  "certificationsPage": {
+    "tag": "Certifications",
+    "title": "Certifications & Credentials",
+    "description": "Professional certifications and coursework that demonstrate skills across cloud, programming, and design."
+  },
+
+  "certifications": [
+    {
+      "id": "web-performance-cert",
+      "title": "Web Performance Certification",
+      "issuingOrganization": "Example Institute",
+      "year": "2025",
+      "description": "Practical certification covering performance budgets, rendering optimization, and Core Web Vitals.",
+      "credentialUrl": "https://example.com/certs/web-performance",
+      "logo": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=240&h=240&fit=crop",
+      "category": "Programming"
+    },
+    {
+      "id": "aws-solutions-architect",
+      "title": "AWS Solutions Architect",
+      "issuingOrganization": "Amazon Web Services",
+      "year": "2021",
+      "description": "Professional certification for designing distributed systems on AWS cloud infrastructure.",
+      "credentialUrl": "https://www.yourcertlink.com/aws-solutions-architect",
+      "logo": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=240&h=240&fit=crop",
+      "category": "Cloud"
+    },
+    {
+      "id": "ux-design-cert",
+      "title": "UX Design Certification",
+      "issuingOrganization": "Google / Coursera",
+      "year": "2022",
+      "description": "Comprehensive program covering user research, wireframing, prototyping, and usability testing.",
+      "credentialUrl": "https://www.yourcertlink.com/ux-design-cert",
+      "category": "Design"
+    },
+    {
+      "id": "react-specialist",
+      "title": "React Specialist",
+      "issuingOrganization": "Frontend Masters",
+      "year": "2023",
+      "description": "Advanced React patterns and state management techniques.",
+      "category": "Programming"
+    }
+  ],
+
+  "contact": {
+    "email": "hello@Amarmorgan.dev",
+    "emailLink": "mailto:hello@Amarmorgan.dev",
+    "location": "San Francisco, California",
+    "availability": "Open to new projects",
+    "cta": { "text": "Let's Connect", "link": "contact.html" }
+  },
+
+  "socialLinks": [
+    { "platform": "GitHub", "url": "https://github.com/Amar1912" },
+    { "platform": "LinkedIn", "url": "https://linkedin.com/in/Amarmorgan" },
+    { "platform": "Twitter", "url": "https://twitter.com/Amarmorgandesign" },
+    { "platform": "Dribbble", "url": "https://dribbble.com/Amarmorgan" }
+  ],
+
+  "footer": {
+    "copyright": "© 2026 Amar Morgan. All rights reserved.",
+    "note": "Crafted with passion."
+  },
+
+  "cta": {
+    "title": "Let's Work Together",
+    "body": "Have a project in mind? I'd love to hear about it. Let's create something amazing together.",
+    "primary": { "text": "Start a Conversation", "link": "contact.html" },
+    "secondary": { "text": "hello@Amarmorgan.dev", "link": "mailto:hello@Amarmorgan.dev" }
+  }
+}

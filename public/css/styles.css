@@ -1845,6 +1845,35 @@ section {
   background: var(--bg-secondary);
 }
 
+/* Project repo link inside overlay */
+.project-overlay {
+  position: relative;
+}
+.project-overlay .project-links {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+.project-repo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.project-repo svg {
+  width: 18px;
+  height: 18px;
+}
+
+
 .github-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
