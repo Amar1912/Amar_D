@@ -833,15 +833,17 @@ section {
   background: white;
   color: var(--color-black);
 }
-
 /* ===================================
    FOOTER
    =================================== */
+
 .footer {
   padding: 80px 0 40px;
   background: var(--bg-secondary);
+  color: var(--color-black);
 }
 
+/* Grid */
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -849,6 +851,7 @@ section {
   margin-bottom: 60px;
 }
 
+/* Brand */
 .footer-brand h3 {
   font-size: 1.5rem;
   margin-bottom: 16px;
@@ -857,11 +860,17 @@ section {
 .footer-brand p {
   font-size: 0.95rem;
   margin-bottom: 24px;
+  color: var(--color-gray);
+  line-height: 1.6;
 }
 
-.footer-social {
+/* Social */
+.footer-social ul {
   display: flex;
   gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .social-link {
@@ -871,7 +880,10 @@ section {
   align-items: center;
   justify-content: center;
   background: var(--color-black);
-  color: white;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
   transition: all var(--transition-fast);
 }
 
@@ -880,8 +892,8 @@ section {
   transform: translateY(-4px);
 }
 
+/* Columns */
 .footer-column h4 {
-  font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -889,8 +901,11 @@ section {
   margin-bottom: 24px;
 }
 
+/* Links */
 .footer-links {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links li {
@@ -900,6 +915,7 @@ section {
 .footer-links a {
   font-size: 0.95rem;
   color: var(--color-gray);
+  text-decoration: none;
   transition: color var(--transition-fast);
 }
 
@@ -907,16 +923,54 @@ section {
   color: var(--color-orange);
 }
 
+/* Bottom */
 .footer-bottom {
   padding-top: 40px;
   border-top: 1px solid var(--color-border);
+}
+
+.footer-bottom-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.footer-bottom p {
+.footer-copy {
   font-size: 0.875rem;
+  color: var(--color-gray-light);
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 60px 0 30px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 /* ===================================
@@ -2182,5 +2236,54 @@ section {
   .hero {
     min-height: auto;
     padding: 40px 0;
+  }
+}
+/* ===============================
+   GO TO PROJECT BUTTON
+   =============================== */
+
+.go-project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 18px;
+  padding: 12px 22px;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #000;
+  background: #FDF6F0;
+
+  border: 1.5px solid #000;
+
+  transition: 
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.go-project-btn:hover {
+  background: #f54c04;
+  color: #020202;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Click effect */
+.go-project-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+  .go-project-btn {
+    width: 100%;
+    text-align: center;
   }
 }

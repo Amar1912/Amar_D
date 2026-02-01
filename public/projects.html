@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,16 @@
   <meta name="keywords" content="portfolio, projects, web development, design, case studies">
   <meta name="author" content="Alex Morgan">
   <meta name="theme-color" content="#FDF6F0">
-  
+
   <title>Projects | Alex Morgan</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="icon.svg">
-  
+
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <body>
   <!-- Page Loader -->
   <div class="page-loader">
@@ -28,7 +30,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">AM.</a>
-      
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
@@ -36,7 +38,7 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="certifications.html">Certifications</a></li>
       </ul>
-      
+
       <div class="menu-toggle">
         <span></span>
         <span></span>
@@ -44,7 +46,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <ul class="mobile-nav-links">
@@ -64,7 +66,8 @@
         <span data-bind="projects.tag">Portfolio</span>
       </div>
       <h1 class="reveal" data-bind="projects.title">Projects</h1>
-      <p class="reveal stagger-1" data-bind="projects.description">A curated collection of work spanning web applications, e-commerce platforms, and digital experiences.</p>
+      <p class="reveal stagger-1" data-bind="projects.description">A curated collection of work spanning web
+        applications, e-commerce platforms, and digital experiences.</p>
     </div>
   </header>
 
@@ -76,29 +79,9 @@
       </div>
     </div>
   </section>
-              <span class="project-view">
-                View Project
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </span>
-            </div>
-          </div>
-          <div class="project-content">
-            <span class="project-category">Food & Beverage</span>
-            <h3 class="project-title">Savour Restaurant</h3>
-            <p class="project-description">Digital ordering system with table reservations, custom menu builder, order management dashboard, and integrated payment processing for restaurants.</p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Express</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Socket.io</span>
-            </div>
-          </div>
-        </article>
-        
-      </div>
-    </div>
+ 
+
+
   </section>
 
   <!-- CTA Section -->
@@ -110,92 +93,51 @@
         <div class="cta-buttons">
           <a href="contact.html" class="btn btn-cta">
             Start a Conversation
-            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
-          <a href="mailto:hello@alexmorgan.dev" class="btn btn-outline">
-            hello@alexmorgan.dev
+          <a href="mailto:amardhadbale@gmail.com" class="btn btn-outline">
+            amardhadbale@gmail.com
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="section-container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3 data-bind="site.name"></h3>
-          <p data-bind="site.tagline"></p>
-          <div class="footer-social" data-bind="socialLinks"></div>
-        </div>
-        
-        <div class="footer-column">
-          <h4>Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="journey.html">Journey</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h4>Services</h4>
-          <ul class="footer-links">
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">UI/UX Design</a></li>
-            <li><a href="#">Mobile Apps</a></li>
-            <li><a href="#">Consulting</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-column">
-          <h4>Contact</h4>
-          <ul class="footer-links">
-            <li><a href="mailto:hello@alexmorgan.dev">hello@alexmorgan.dev</a></li>
-            <li><a href="#">San Francisco, CA</a></li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
-        <p>Crafted with passion.</p>
-      </div>
-    </div>
-  </footer>
+  <!-- Footer (loaded dynamically) -->
+  <div id="footer"></div>
 
-  <!-- Templates (used by data-loader) -->
   <template id="project-template">
     <article class="project-card reveal">
+
       <div class="project-image">
         <img alt="">
-        <div class="project-overlay">
-          <span class="project-links"></span>
-          <span class="project-view">
-            View Project
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-        </div>
       </div>
+
       <div class="project-content">
         <span class="project-category"></span>
         <h3 class="project-title"></h3>
         <p class="project-description"></p>
         <div class="project-tech"></div>
+
+        <!-- ✅ REAL BUTTON -->
+        <a class="btn btn-primary go-project-btn" target="_blank">
+          Go to Project
+        </a>
       </div>
+
     </article>
   </template>
+
 
   <!-- Data loader -->
   <script src="js/data-loader.js"></script>
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>
+  <script src="footer.js"></script>
 </body>
+
 </html>

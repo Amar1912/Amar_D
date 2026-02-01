@@ -1,0 +1,20 @@
+{
+  "brand": {
+    "name": "Alex Morgan",
+    "tagline": "Designing delightful digital experiences"
+  },
+  "navigation": [
+    { "label": "Home", "url": "index.html" },
+    { "label": "Projects", "url": "projects.html" },
+    { "label": "Journey", "url": "journey.html" },
+    { "label": "Contact", "url": "contact.html" },
+    { "label": "Certifications", "url": "certifications.html" }
+  ],
+  "social": [
+    { "label": "GitHub", "url": "https://github.com/your-username" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/your-profile" },
+    { "label": "Instagram", "url": "https://www.instagram.com/your-profile" }
+  ],
+  "copyright": "© 2026 Alex Morgan. All rights reserved.",
+  "note": ""
+}

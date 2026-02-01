@@ -5,7 +5,7 @@
  * - Minimal use of innerHTML (only for small, trusted SVG icon strings)
  */
 
-(function() {
+(function () {
   'use strict';
 
   // Try multiple paths to support different static server setups (root vs relative)
@@ -72,7 +72,7 @@
 
   function bindSimpleValues(data) {
     // All elements with data-bind that reference primitive values get populated
-    qAll('[data-bind]').forEach(function(el) {
+    qAll('[data-bind]').forEach(function (el) {
       const path = el.getAttribute('data-bind');
       // Skip list containers (we render lists with dedicated functions)
       if (/\.(featured|all|preview|progress|timeline|details|cards)$/.test(path)) return;
@@ -84,7 +84,7 @@
     });
 
     // data-bind-link -> set href
-    qAll('[data-bind-link]').forEach(function(el) {
+    qAll('[data-bind-link]').forEach(function (el) {
       const path = el.getAttribute('data-bind-link');
       const value = get(data, path);
       if (value) setLink(el, value);
@@ -134,12 +134,15 @@
     const article = el('article', 'project-card reveal');
     const imgWrap = el('div', 'project-image');
     const img = el('img');
+
+    // correct image source from images[]
+    img.setAttribute('data-src', (project.images && project.images[0]) || '');
     img.alt = project.title || '';
-    // lazy-load via data-src so main.js can pick it up
-    img.setAttribute('data-src', project.image || '');
+
     const overlay = el('div', 'project-overlay');
     const view = el('span', 'project-view');
     view.textContent = 'View Project';
+
     overlay.appendChild(view);
     imgWrap.appendChild(img);
     imgWrap.appendChild(overlay);
@@ -149,6 +152,7 @@
     const title = el('h3', 'project-title');
     const desc = el('p', 'project-description');
     const tech = el('div', 'project-tech');
+
     content.appendChild(cat);
     content.appendChild(title);
     content.appendChild(desc);
@@ -159,68 +163,92 @@
     return article;
   }
 
+
   function populateProjectNode(fragmentOrNode, project) {
-    // fragmentOrNode may be a DocumentFragment (from template) or Node
     const root = resolveRoot(fragmentOrNode);
     if (!root) return;
 
+    /* IMAGE → first image from images[] */
     const img = root.querySelector('img');
-    if (img) {
+    if (img && Array.isArray(project.images) && project.images.length > 0) {
       img.alt = project.title || '';
-      if (project.image) img.setAttribute('data-src', project.image);
+      img.setAttribute('data-src', project.images[0]);
     }
 
+    /* GO TO PROJECT BUTTON → GitHub */
+    const goBtn = root.querySelector('.go-project-btn');
+    if (goBtn && project.repoUrl) {
+      goBtn.href = project.repoUrl;
+    }
+
+
+    /* CATEGORY */
     const cat = root.querySelector('.project-category');
     if (cat) cat.textContent = project.category || '';
 
+    /* TITLE */
     const title = root.querySelector('.project-title');
     if (title) title.textContent = project.title || '';
 
+    /* SHORT DESCRIPTION */
     const desc = root.querySelector('.project-description');
-    if (desc) desc.textContent = project.description || '';
+    if (desc) desc.textContent = project.shortDescription || '';
 
+    /* TECH STACK */
     const techWrap = root.querySelector('.project-tech');
     if (techWrap) {
       techWrap.innerHTML = '';
-      (project.tech || []).forEach(t => {
+      (project.techStack || []).forEach(t => {
         const span = el('span', 'tech-tag');
         span.textContent = t;
         techWrap.appendChild(span);
       });
     }
 
-    // If there's a view link area, add a simple click to navigate
+    /* VIEW PROJECT LINK */
+    /* VIEW PROJECT → GitHub Repo */
     const view = root.querySelector('.project-view');
-    if (view) {
-      // prefer explicit link if provided, otherwise link to project detail page using id
-      const dest = project.link || (project.id ? 'project.html?id=' + encodeURIComponent(project.id) : null);
-      if (dest) {
-        const a = document.createElement('a');
-        a.href = dest;
-        a.className = 'project-view-link';
-        // keep content (text & svg if present) inside
-        while (view.firstChild) a.appendChild(view.firstChild);
-        view.appendChild(a);
+
+    if (view && project.repoUrl) {
+      const a = document.createElement('a');
+      a.href = project.repoUrl;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.className = 'project-view-link';
+
+      // inherit styles from span
+      a.style.color = 'inherit';
+      a.style.textDecoration = 'none';
+      a.style.display = 'inline-flex';
+      a.style.alignItems = 'center';
+      a.style.gap = '6px';
+
+      // move text + svg inside anchor
+      while (view.firstChild) {
+        a.appendChild(view.firstChild);
       }
+
+      view.appendChild(a);
     }
 
-    // Add repository link if provided (renders a small GitHub icon button)
+
+
+    /* REPO LINK (GitHub icon) */
     const linksWrap = root.querySelector('.project-links');
     if (linksWrap) {
       linksWrap.innerHTML = '';
-      const repoUrl = project.repoUrl || project.repo;
-      if (repoUrl) {
+      if (project.repoUrl) {
         const ra = document.createElement('a');
-        ra.href = repoUrl;
+        ra.href = project.repoUrl;
         ra.className = 'project-repo';
-        ra.setAttribute('aria-label', 'View repository');
-        ra.setAttribute('target', '_blank');
-        ra.setAttribute('rel', 'noopener noreferrer');
-        ra.innerHTML = socialIcon('github') || 'Git';
+        ra.target = '_blank';
+        ra.rel = 'noopener noreferrer';
+        ra.innerHTML = socialIcon('github');
         linksWrap.appendChild(ra);
       }
     }
   }
+
 
   function renderTestimonials(data) {
     // Support both preview and full lists. If a container uses 'testimonials.preview' it will
@@ -491,7 +519,7 @@
     const p = el('p'); p.className = 'cert-desc'; p.textContent = cert.description || '';
     const actions = el('div', 'cert-actions');
     if (cert.credentialUrl) {
-      const a = document.createElement('a'); a.className = 'btn btn-secondary'; a.href = cert.credentialUrl; a.textContent = 'View Credential'; a.setAttribute('target','_blank'); a.setAttribute('rel','noopener noreferrer'); actions.appendChild(a);
+      const a = document.createElement('a'); a.className = 'btn btn-secondary'; a.href = cert.credentialUrl; a.textContent = 'View Credential'; a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener noreferrer'); actions.appendChild(a);
     }
     content.appendChild(h3); content.appendChild(meta); content.appendChild(p); content.appendChild(actions);
     article.appendChild(logo); article.appendChild(content);
@@ -616,7 +644,7 @@
     // Populate numeric stat elements inside the container that declare `data-bind="github.<key>"`
     if (container) {
       const els = container.querySelectorAll('[data-bind^="github."]');
-      els.forEach(function(el) {
+      els.forEach(function (el) {
         const path = el.getAttribute('data-bind');
         const value = get(data, path);
         if (value !== undefined) {
@@ -668,7 +696,7 @@
       impactEl.innerHTML = '';
       const tpl = document.getElementById('impact-item-template');
       (project.impact || []).forEach(it => {
-        const node = tpl ? tpl.content.cloneNode(true) : (function(){ const li = document.createElement('li'); li.className = 'impact-item'; li.textContent = it; return li; })();
+        const node = tpl ? tpl.content.cloneNode(true) : (function () { const li = document.createElement('li'); li.className = 'impact-item'; li.textContent = it; return li; })();
         const root = resolveRoot(node);
         if (root) {
           const li = root.querySelector && root.querySelector('.impact-item');
@@ -683,7 +711,7 @@
       techEl.innerHTML = '';
       const tpl = document.getElementById('tech-item-template');
       (project.techStack || []).forEach(t => {
-        const node = tpl ? tpl.content.cloneNode(true) : (function(){ const s = document.createElement('span'); s.className='tech-tag'; s.textContent=t; return s; })();
+        const node = tpl ? tpl.content.cloneNode(true) : (function () { const s = document.createElement('span'); s.className = 'tech-tag'; s.textContent = t; return s; })();
         const root = resolveRoot(node);
         if (root) {
           const tag = root.querySelector && root.querySelector('.tech-tag');
@@ -698,7 +726,7 @@
       imagesEl.innerHTML = '';
       const tpl = document.getElementById('project-image-template');
       (project.images || []).forEach(src => {
-        const node = tpl ? tpl.content.cloneNode(true) : (function(){ const d = document.createElement('div'); d.className='project-image'; const i = document.createElement('img'); i.alt = project.title || ''; i.setAttribute('data-src', src); d.appendChild(i); return d; })();
+        const node = tpl ? tpl.content.cloneNode(true) : (function () { const d = document.createElement('div'); d.className = 'project-image'; const i = document.createElement('img'); i.alt = project.title || ''; i.setAttribute('data-src', src); d.appendChild(i); return d; })();
         const root = resolveRoot(node);
         if (root) {
           const img = root.querySelector('img'); if (img) img.setAttribute('data-src', src);
@@ -739,7 +767,7 @@
 
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() { init(); });
+    document.addEventListener('DOMContentLoaded', function () { init(); });
   } else {
     init();
   }
@@ -769,7 +797,7 @@
 
       // Update nav logo and metadata
       const navLogo = q('.nav-logo');
-      if (navLogo && data.site && data.site.name) navLogo.textContent = data.site.name.split(' ').map(n=>n[0]).join('').toUpperCase();
+      if (navLogo && data.site && data.site.name) navLogo.textContent = data.site.name.split(' ').map(n => n[0]).join('').toUpperCase();
 
       if (data.site && data.site.meta) {
         if (data.site.meta.title) document.title = data.site.meta.title;
@@ -791,9 +819,9 @@
               img.src = img.dataset.src;
               img.removeAttribute('data-src');
             }
-          } catch(e) {}
+          } catch (e) { }
         });
-      } catch(e) {}
+      } catch (e) { }
       // signal to other scripts that data is present (helps avoid race conditions)
       window.__portfolioDataLoaded = true;
       document.dispatchEvent(new CustomEvent('portfolio-data-loaded', { detail: data }));

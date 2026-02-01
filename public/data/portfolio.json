@@ -258,218 +258,304 @@
     "avatar": "https://avatars.githubusercontent.com/u/163174930?v=4",
     "profileUrl": "https://github.com/Amar1912"
   },
- "resume": {
-  "experience": [
-    {
-      "company": "Shiv Sai Tours (Client Project)",
-      "role": "Web Developer",
-      "from": "2024",
-      "to": "Present",
-      "desc": "Designed and developed a professional tours and travel business website using HTML, CSS, JavaScript, PHP, and Laravel. Implemented responsive layouts, service pages, contact forms, and SEO-friendly structure to enhance online visibility and customer engagement."
-    },
-    {
-      "company": "1Stop.ai",
-      "role": "Full Stack Web Development Intern",
-      "from": "Mar 2024",
-      "to": "Apr 2024",
-      "desc": "Worked on dynamic web applications using PHP, MySQL, HTML, CSS, and JavaScript. Implemented CRUD operations, form handling, and responsive UI while gaining practical experience in full-stack development."
-    },
-    {
-      "company": "Wisdom Sprouts IT Training Hub",
-      "role": "Cloud Computing Intern",
-      "from": "2024",
-      "to": "2024",
-      "desc": "Completed hands-on cloud computing internship covering cloud fundamentals, virtualization concepts, and basic deployment workflows. Gained exposure to cloud services, infrastructure concepts, and practical use cases."
-    }
-  ],
-  "education": [
-    {
-      "institution": "Matoshri College of Engineering, Nashik",
-      "degree": "Bachelor of Engineering (B.E.) in Electronics & Telecommunication Engineering",
-      "from": "2023",
-      "to": "2027 (Pursuing)"
-    },
-    {
-      "institution": "Sanjivani Sainiki School, Maharashtra",
-      "degree": "Secondary Education (Class 10)",
-      "from": "2020",
-      "to": "2021"
-    },
-    {
-      "institution": "Sanjivani Sainiki School, Maharashtra",
-      "degree": "Higher Secondary Education (Class 12)",
-      "from": "2022",
-      "to": "2023"
-    }
-  ]
-},
+  "resume": {
+    "experience": [
+      {
+        "company": "Shiv Sai Tours (Client Project)",
+        "role": "Web Developer",
+        "from": "2024",
+        "to": "Present",
+        "desc": "Designed and developed a professional tours and travel business website using HTML, CSS, JavaScript, PHP, and Laravel. Implemented responsive layouts, service pages, contact forms, and SEO-friendly structure to enhance online visibility and customer engagement."
+      },
+      {
+        "company": "1Stop.ai",
+        "role": "Full Stack Web Development Intern",
+        "from": "Mar 2024",
+        "to": "Apr 2024",
+        "desc": "Worked on dynamic web applications using PHP, MySQL, HTML, CSS, and JavaScript. Implemented CRUD operations, form handling, and responsive UI while gaining practical experience in full-stack development."
+      },
+      {
+        "company": "Wisdom Sprouts IT Training Hub",
+        "role": "Cloud Computing Intern",
+        "from": "2024",
+        "to": "2024",
+        "desc": "Completed hands-on cloud computing internship covering cloud fundamentals, virtualization concepts, and basic deployment workflows. Gained exposure to cloud services, infrastructure concepts, and practical use cases."
+      }
+    ],
+    "education": [
+      {
+        "institution": "Matoshri College of Engineering, Nashik",
+        "degree": "Bachelor of Engineering (B.E.) in Electronics & Telecommunication Engineering",
+        "from": "2023",
+        "to": "2027 (Pursuing)"
+      },
+      {
+        "institution": "Sanjivani Sainiki School, Maharashtra",
+        "degree": "Secondary Education (Class 10)",
+        "from": "2020",
+        "to": "2021"
+      },
+      {
+        "institution": "Sanjivani Sainiki School, Maharashtra",
+        "degree": "Higher Secondary Education (Class 12)",
+        "from": "2022",
+        "to": "2023"
+      }
+    ]
+  },
   "projects": [
     {
-      "id": "analytics-dashboard",
-      "title": "Analytics Dashboard",
-      "category": "Web Application",
-      "shortDescription": "A comprehensive analytics platform for real-time data visualization and business insights.",
-      "fullDescription": "Analytics Dashboard is a data-first web application providing customizable dashboards, interactive charts and advanced filtering for enterprise analytics teams.",
-      "problem": "Customers lacked a unified view of KPI data across services.",
-      "solution": "Built a modular dashboard with real-time streams, reusable widgets, and exportable reports.",
+      "id": "sai-tours",
+      "title": "Sai Tours & Travels Website",
+      "category": "Business Website",
+      "shortDescription": "A professional tours and travels business website with responsive design, service pages, and customer inquiry system.",
+      "fullDescription": "Sai Tours & Travels is a business website developed to establish a strong online presence for a tours and travel company. The project includes service listings, tour packages, inquiry forms, and SEO-friendly structure built using Laravel for scalability and maintainability.",
+      "problem": "The business lacked an online presence and an efficient way for customers to explore services and submit inquiries.",
+      "solution": "Designed and developed a responsive, SEO-optimized website with Laravel backend, dynamic pages, and secure inquiry handling.",
       "impact": [
-        "Reduced reporting time by 60%",
-        "Improved decision-making with real-time KPIs"
+        "Improved online visibility for the business",
+        "Enabled customers to easily explore services and contact the company"
       ],
       "techStack": [
-        "React",
-        "TypeScript",
-        "D3.js",
-        "GraphQL"
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "Laravel",
+        "MySQL"
       ],
       "images": [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop"
+        "https://images.unsplash.com/photo-1502920514313-52581002a659?w=1200&h=800&fit=crop"
       ],
-      "liveUrl": "#",
-      "repoUrl": "https://github.com/Amar1912/analytics-dashboard",
+      "liveUrl": "https://github.com/Amar1912/Sai_Tours",
+      "repoUrl": "https://github.com/Amar1912/Sai_Tours",
       "featured": true
     },
     {
-      "id": "luxe-marketplace",
-      "title": "Luxe Marketplace",
-      "category": "E-Commerce",
-      "shortDescription": "Premium e-commerce experience with seamless checkout and personalized recommendations.",
-      "fullDescription": "Luxe Marketplace is designed for high-end retailers with personalized storefronts, advanced inventory sync, and a frictionless checkout flow.",
-      "problem": "Site conversions were low due to slow checkout and limited personalization.",
-      "solution": "Implemented server-side rendering, personalized recommendations, and a streamlined checkout path.",
-      "impact": [
-        "Increased conversion rate by 18%",
-        "Average order value up by 12%"
-      ],
-      "techStack": [
-        "Next.js",
-        "Stripe",
-        "Tailwind CSS"
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=1200&h=800&fit=crop"
-      ],
-      "liveUrl": "#",
-      "repoUrl": "https://github.com/Amar1912/luxe-marketplace",
-      "featured": true
-    },
-    {
-      "id": "finflow",
-      "title": "FinFlow Banking",
-      "category": "Mobile App",
-      "shortDescription": "Modern banking app with intuitive UX and real-time monitoring.",
-      "fullDescription": "FinFlow is a mobile-first banking experience with biometric login, instant transfers, and contextual notifications.",
-      "problem": "Customers had difficulty with transaction visibility and authentication.",
-      "solution": "Designed secure biometric flows and a unified feed for transactions and notifications.",
-      "impact": [
-        "Increased daily active users by 25%",
-        "Improved retention metrics"
-      ],
-      "techStack": [
-        "React Native",
-        "Node.js",
-        "PostgreSQL"
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop"
-      ],
-      "liveUrl": "#",
-      "repoUrl": "https://github.com/Amar1912/finflow",
-      "featured": true
-    },
-    {
-      "id": "artisan-studio",
-      "title": "Artisan Creative Studio",
-      "category": "Brand Website",
-      "shortDescription": "Award-winning portfolio for a creative agency with immersive animations.",
-      "fullDescription": "An immersive portfolio site combining 3D visuals and a content-managed backend for editorial updates.",
-      "problem": "Agency needed a flexible showcase for evolving case studies.",
-      "solution": "Delivered a fast, editor-friendly site with custom CMS integration and high-performance assets.",
-      "impact": [
-        "Won 2 design awards",
-        "Improved content velocity"
-      ],
-      "techStack": [
-        "Three.js",
-        "GSAP",
-        "Sanity"
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1200&h=800&fit=crop"
-      ],
-      "liveUrl": "#",
-      "repoUrl": "https://github.com/Amar1912/artisan-studio",
-      "featured": false
-    }
+  "id": "laravel-blog-website",
+  "title": "Laravel Blog Website",
+  "category": "Web Application",
+  "shortDescription": "A dynamic blog website built with Laravel featuring user authentication, post management, and a clean responsive UI.",
+  "fullDescription": "Laravel Blog Website is a full-stack blogging platform developed using Laravel. It allows users to create, edit, and manage blog posts with authentication, secure routing, and database-driven content management.",
+  "problem": "Static blog systems lack scalability, authentication, and structured content management.",
+  "solution": "Developed a Laravel-based blog system with MVC architecture, database integration, authentication, and CRUD functionality.",
+  "impact": [
+    "Improved content management efficiency",
+    "Secure user authentication and authorization",
+    "Scalable backend architecture"
+  ],
+  "techStack": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "PHP",
+    "Laravel",
+    "MySQL"
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop"
+  ],
+  "liveUrl": "",
+  "repoUrl": "https://github.com/Amar1912/Laravel_Blog_Website",
+  "featured": true
+},
+{
+  "id": "beauty-parlor-website",
+  "title": "Beauty Parlor Management Website",
+  "category": "Web Application",
+  "shortDescription": "A PHP and MySQL-based beauty parlor website with appointment booking and service management.",
+  "fullDescription": "Beauty Parlor Management Website is a dynamic web application developed using PHP and MySQL. It allows customers to view services and book appointments, while admins can manage services, bookings, and customer data through a structured backend.",
+  "problem": "Manual appointment handling and service management leads to scheduling errors and inefficiency.",
+  "solution": "Built a PHP–MySQL based system with online booking, database-driven services, and an admin management panel.",
+  "impact": [
+    "Simplified appointment booking process",
+    "Improved service management",
+    "Reduced manual scheduling errors"
+  ],
+  "techStack": [
+    "HTML",
+    "CSS",
+    "PHP",
+    "MySQL"
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&h=800&fit=crop"
+  ],
+  "liveUrl": "",
+  "repoUrl": "https://github.com/Amar1912/beauty_parlor",
+  "featured": false
+},
+{
+  "id": "hospital-management-system",
+  "title": "Hospital Management System",
+  "category": "Web Application",
+  "shortDescription": "A PHP and MySQL based Hospital Management System for patient records, appointments, and staff management.",
+  "fullDescription": "Hospital Management System is a dynamic web application developed using PHP and MySQL. It provides modules for patient registration, doctor scheduling, appointment handling, and basic reporting, streamlining hospital operations and improving data accessibility.",
+  "problem": "Manual record keeping and appointment management in a hospital leads to inefficiency and errors.",
+  "solution": "Developed a comprehensive PHP–MySQL system that automates patient data management, appointment scheduling, doctor availability tracking, and basic reporting.",
+  "impact": [
+    "Reduced manual paperwork and errors",
+    "Faster appointment scheduling",
+    "Improved patient and staff data management"
+  ],
+  "techStack": [
+    "HTML",
+    "CSS",
+    "PHP",
+    "MySQL"
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1580281657529-1be6ccb1d80f?w=1200&h=800&fit=crop"
+  ],
+  "liveUrl": "",
+  "repoUrl": "https://github.com/Amar1912/Hospital-management-system-",
+  "featured": false
+},
+{
+  "id": "blinkit-clone-app",
+  "title": "Blinkit Clone App",
+  "category": "Mobile Application",
+  "shortDescription": "A basic Flutter app inspired by Blinkit with simple UI screens.",
+  "problem": "To understand basic mobile app layout and navigation using Flutter.",
+  "solution": "Created a simple multi-page Flutter application with product listing and cart-style UI.",
+  "techStack": [
+    "Flutter",
+    "Dart"
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1580894908361-f08c20a0fda2?w=1200&h=800&fit=crop"
+  ],
+  "repoUrl": "https://github.com/Amar1912/Blinkit_Clone_App",
+  "featured": false
+},
+{
+  "id": "employee-management",
+  "title": "Employee Management System",
+  "category": "Web Application",
+  "shortDescription": "A PHP and MySQL based Employee Management System for simple CRUD operations.",
+  "fullDescription": "Employee Management System is a web application built with PHP and MySQL that allows users to manage employee records including adding, editing, and deleting employee details in a structured database.",
+  "problem": "Managing employee data manually leads to disorganization and errors.",
+  "solution": "Developed a simple PHP application with MySQL database to perform CRUD operations on employee records.",
+  "impact": [
+    "Streamlined employee data handling",
+    "Improved basic record organization"
+  ],
+  "techStack": [
+    "HTML",
+    "CSS",
+    "PHP",
+    "MySQL"
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=1200&h=800&fit=crop"
+  ],
+  "liveUrl": "",
+  "repoUrl": "https://github.com/Amar1912/Employee_Management",
+  "featured": false
+},
+{
+  "id": "insta-profile-clone",
+  "title": "Instagram Profile Clone",
+  "category": "Web Application",
+  "shortDescription": "A static Instagram profile clone built with HTML, CSS & JavaScript.",
+  "fullDescription": "Instagram Profile Clone is a frontend project replicating the UI layout of an Instagram user profile page using HTML, CSS, and JavaScript. It demonstrates responsive design and interactive elements typical of a social media profile interface.",
+  "problem": "To learn frontend layout skills and practice structuring a real-world UI using standard web technologies.",
+  "solution": "Built a pixel-perfect Instagram profile clone with navigation, profile header, posts grid, and interactive elements using HTML, CSS, and JavaScript.",
+  "impact": [
+    "Enhanced UI/UX layout skills",
+    "Improved understanding of CSS positioning and responsive design"
+  ],
+  "techStack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=1200&h=800&fit=crop"
+  ],
+  "liveUrl": "",
+  "repoUrl": "https://github.com/Amar1912/Insta-profile",
+  "featured": false
+},
+{
+  "id": "coffee-web-landing-page",
+  "title": "Coffee Web Landing Page",
+  "category": "Web Design",
+  "shortDescription": "A responsive coffee shop landing page built using HTML, CSS, and JavaScript.",
+  "fullDescription": "Coffee Web Landing Page is a frontend project creating a modern and responsive landing page for a coffee shop. It showcases clean layout design, attractive visuals, and interactive elements using HTML, CSS, and JavaScript.",
+  "problem": "To practice UI design and responsive layout using core web technologies.",
+  "solution": "Designed and developed a coffee shop landing page with sections for features, menu highlights, customer testimonials, and contact call-to-action.",
+  "impact": [
+    "Demonstrated responsive UI / UX layout",
+    "Showcased visual design and frontend skills"
+  ],
+  "techStack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&h=800&fit=crop"
+  ],
+  "liveUrl": "",
+  "repoUrl": "https://github.com/Amar1912/coffee-web-landing-page",
+  "featured": false
+},{
+  "id": "gym-web-project",
+  "title": "Gym Web Project",
+  "category": "Web Design",
+  "shortDescription": "A responsive gym website built with HTML, CSS, and JavaScript.",
+  "fullDescription": "Gym Web Project is a static gym landing website created using HTML, CSS, and JavaScript. It features sections like services, trainers, membership plans, testimonials, and contact call-to-action to showcase a complete gym promotional site.",
+  "problem": "To showcase frontend layout, responsive design, and interactive UI elements for a fitness/gym brand.",
+  "solution": "Designed and developed a multi-section, clean, and modern gym website with responsive layout and UI interactions using foundational web technologies.",
+  "impact": [
+    "Improved frontend design and responsiveness skills",
+    "Demonstrated ability to structure multi-section web pages"
+  ],
+  "techStack": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "images": [
+    "https://images.unsplash.com/photo-1554284126-aa88f22d8d16?w=1200&h=800&fit=crop"
+  ],
+  "liveUrl": "",
+  "repoUrl": "https://github.com/Amar1912/Gym-Web-Project",
+  "featured": false
+}
+
+
   ],
   "testimonials": [
-  {
-    "name": "Vishal Kaklij",
-    "role": "Founder, Shiv Sai Tours",
-    "quote": "Amar delivered a clean, professional website that perfectly represents our tours and travel business. The site is responsive, easy to use, and helped us establish a strong online presence.",
-    "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop"
-  },
-  {
-    "name": "Samruddhi Jadhav",
-    "role": "Content Creator & Blogger",
-    "quote": "The blog website Amar developed is smooth, well-structured, and easy to manage. The design and frontend flow made content publishing simple and visually appealing.",
-    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
-  },
-  {
-    "name": "Vinod Nikam",
-    "role": "Business Owner",
-    "quote": "Amar optimized our website with proper SEO practices, improving structure, performance, and visibility. The results were noticeable, and the overall site quality improved significantly.",
-    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
-  }
-],
+    {
+      "name": "Vishal Kaklij",
+      "role": "Founder, Shiv Sai Tours",
+      "quote": "Amar delivered a clean, professional website that perfectly represents our tours and travel business. The site is responsive, easy to use, and helped us establish a strong online presence.",
+      "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop"
+    },
+    {
+      "name": "Samruddhi Jadhav",
+      "role": "Content Creator & Blogger",
+      "quote": "The blog website Amar developed is smooth, well-structured, and easy to manage. The design and frontend flow made content publishing simple and visually appealing.",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+    },
+    {
+      "name": "Vinod Nikam",
+      "role": "Business Owner",
+      "quote": "Amar optimized our website with proper SEO practices, improving structure, performance, and visibility. The results were noticeable, and the overall site quality improved significantly.",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+    }
+  ],
   "certificationsPage": {
     "tag": "Certifications",
     "title": "Certifications & Credentials",
     "description": "Professional certifications and coursework that demonstrate skills across cloud, programming, and design."
   },
-  "certifications": [
-    {
-      "id": "web-performance-cert",
-      "title": "Web Performance Certification",
-      "issuingOrganization": "Example Institute",
-      "year": "2025",
-      "description": "Practical certification covering performance budgets, rendering optimization, and Core Web Vitals.",
-      "credentialUrl": "https://example.com/certs/web-performance",
-      "logo": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=240&h=240&fit=crop",
-      "category": "Programming"
-    },
-    {
-      "id": "aws-solutions-architect",
-      "title": "AWS Solutions Architect",
-      "issuingOrganization": "Amazon Web Services",
-      "year": "2021",
-      "description": "Professional certification for designing distributed systems on AWS cloud infrastructure.",
-      "credentialUrl": "https://www.yourcertlink.com/aws-solutions-architect",
-      "logo": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=240&h=240&fit=crop",
-      "category": "Cloud"
-    },
-    {
-      "id": "ux-design-cert",
-      "title": "UX Design Certification",
-      "issuingOrganization": "Google / Coursera",
-      "year": "2022",
-      "description": "Comprehensive program covering user research, wireframing, prototyping, and usability testing.",
-      "credentialUrl": "https://www.yourcertlink.com/ux-design-cert",
-      "category": "Design"
-    },
-    {
-      "id": "react-specialist",
-      "title": "React Specialist",
-      "issuingOrganization": "Frontend Masters",
-      "year": "2023",
-      "description": "Advanced React patterns and state management techniques.",
-      "category": "Programming"
-    }
-  ],
   "contact": {
-    "email": "hello@AmarDhadbale.dev",
-    "emailLink": "mailto:hello@AmarDhadbale.dev",
-    "location": "San Francisco, California",
+    "email": "amardhadbale@gmail.com",
+    "emailLink": "mailto:amardhadbale@gmail.com",
+    "location": "Nashik, Maharastra",
     "availability": "Open to new projects",
     "cta": {
       "text": "Let's Connect",
@@ -493,21 +579,5 @@
       "platform": "Dribbble",
       "url": "https://dribbble.com/AmarDhadbale"
     }
-  ],
-  "footer": {
-    "copyright": "© 2026 Amar Dhadbale. All rights reserved.",
-    "note": "Crafted with passion."
-  },
-  "cta": {
-    "title": "Let's Work Together",
-    "body": "Have a project in mind? I'd love to hear about it. Let's create something amazing together.",
-    "primary": {
-      "text": "Start a Conversation",
-      "link": "contact.html"
-    },
-    "secondary": {
-      "text": "hello@AmarDhadbale.dev",
-      "link": "mailto:hello@AmarDhadbale.dev"
-    }
-  }
+  ]
 }
