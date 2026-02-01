@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,16 @@
   <meta name="keywords" content="about, journey, developer, designer, experience, career">
   <meta name="author" content="Alex Morgan">
   <meta name="theme-color" content="#FDF6F0">
-  
+
   <title>Journey | Alex Morgan</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="icon.svg">
-  
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <!-- Page Loader -->
   <div class="page-loader">
@@ -28,7 +30,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">AM.</a>
-      
+
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -36,7 +38,7 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="certifications.html">Certifications</a></li>
       </ul>
-      
+
       <div class="menu-toggle">
         <span></span>
         <span></span>
@@ -44,7 +46,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <ul class="mobile-nav-links">
@@ -64,7 +66,8 @@
         <span>About Me</span>
       </div>
       <h1 class="reveal">My Journey</h1>
-      <p class="reveal stagger-1">From curiosity to craft — the path that shaped who I am as a developer and designer.</p>
+      <p class="reveal stagger-1">From curiosity to craft — the path that shaped who I am as a developer and designer.
+      </p>
     </div>
   </header>
 
@@ -74,10 +77,11 @@
       <div class="about-intro">
         <div class="about-image reveal-left">
           <div class="about-image-frame">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop" alt="Alex Morgan - Creative Developer">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=750&fit=crop"
+              alt="Alex Morgan - Creative Developer">
           </div>
         </div>
-        
+
         <div class="about-text reveal-right">
           <div class="section-tag">
             <span class="section-tag-line"></span>
@@ -89,8 +93,9 @@
           <p data-bind="about.p3"></p>
           <a href="contact.html" class="btn btn-primary" data-bind-link="about.ctaLink">
             <span data-bind="about.ctaText"></span>
-            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>
@@ -111,10 +116,10 @@
           A timeline of my professional growth, from first lines of code to building impactful digital experiences.
         </p>
       </div>
-      
+
       <div class="timeline" data-bind="timeline">
         <div class="timeline-line-progress"></div>
-      </div> 
+      </div>
     </div>
   </section>
 
@@ -131,45 +136,45 @@
           A clear view of my technical competencies and proficiency levels across different domains.
         </p>
       </div>
-      
+
       <div class="skills-progress-grid" data-bind="skills.progress"></div>
 
-  <!-- Templates (used by data-loader) -->
-  <template id="timeline-item-template">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <span class="timeline-year"></span>
-        <h3 class="timeline-title"></h3>
-        <p class="timeline-description"></p>
-      </div>
-    </div>
-  </template>
+      <!-- Templates (used by data-loader) -->
+      <template id="timeline-item-template">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year"></span>
+            <h3 class="timeline-title"></h3>
+            <p class="timeline-description"></p>
+          </div>
+        </div>
+      </template>
 
-  <template id="skill-progress-template">
-    <div class="skills-category reveal">
-      <div class="skills-category-header">
-        <div class="skills-category-icon"></div>
-        <h3 class="skills-category-title"></h3>
-      </div>
-      <div class="skills-category-items"></div>
-    </div>
-  </template>
+      <template id="skill-progress-template">
+        <div class="skills-category reveal">
+          <div class="skills-category-header">
+            <div class="skills-category-icon"></div>
+            <h3 class="skills-category-title"></h3>
+          </div>
+          <div class="skills-category-items"></div>
+        </div>
+      </template>
 
-  <template id="skill-progress-item-template">
-    <div class="skill-progress-item">
-      <div class="skill-progress-header">
-        <span class="skill-progress-name"></span>
-        <span class="skill-progress-percent"></span>
-      </div>
-      <div class="skill-progress-bar">
-        <div class="skill-progress-fill" data-progress="0"></div>
-      </div>
-    </div>
-  </template>
+      <template id="skill-progress-item-template">
+        <div class="skill-progress-item">
+          <div class="skill-progress-header">
+            <span class="skill-progress-name"></span>
+            <span class="skill-progress-percent"></span>
+          </div>
+          <div class="skill-progress-bar">
+            <div class="skill-progress-fill" data-progress="0"></div>
+          </div>
+        </div>
+      </template>
 
-  <!-- Data loader -->
-  <script src="js/data-loader.js"></script>
+      <!-- Data loader -->
+      <script src="js/data-loader.js"></script>
     </div>
   </section>
 
@@ -186,86 +191,47 @@
           A summary of my professional experience and educational background.
         </p>
       </div>
-      
+
       <div class="resume-grid">
         <!-- Experience Column -->
         <div class="resume-column reveal-left">
           <h3>Work Experience</h3>
-          
+
           <div class="resume-item">
             <span class="resume-period">2024 - Present</span>
             <h4 class="resume-title">Independent Creative Developer</h4>
             <p class="resume-company">Freelance</p>
-            <p class="resume-description">Crafting premium digital experiences for select clients. Specializing in innovative web applications and design-focused development.</p>
-          </div>
-          
-          <div class="resume-item">
-            <span class="resume-period">2023 - 2024</span>
-            <h4 class="resume-title">Senior Developer</h4>
-            <p class="resume-company">Digital Product Studio</p>
-            <p class="resume-description">Led technical initiatives for Fortune 500 clients. Established coding standards and mentored junior developers.</p>
-          </div>
-          
-          <div class="resume-item">
-            <span class="resume-period">2021 - 2023</span>
-            <h4 class="resume-title">Full Stack Developer</h4>
-            <p class="resume-company">Tech Startup</p>
-            <p class="resume-description">Built end-to-end features for a SaaS platform. Focused on performance optimization and scalable architecture.</p>
-          </div>
-          
-          <div class="resume-item">
-            <span class="resume-period">2019 - 2021</span>
-            <h4 class="resume-title">Frontend Developer</h4>
-            <p class="resume-company">Digital Agency</p>
-            <p class="resume-description">Developed responsive websites and web applications. Collaborated with designers to create pixel-perfect interfaces.</p>
+            <p class="resume-description">Crafting premium digital experiences for select clients. Specializing in
+              innovative web applications and design-focused development.</p>
           </div>
         </div>
-        
+
         <!-- Education Column -->
         <div class="resume-column reveal-right">
           <h3>Education</h3>
-          
-          <div class="resume-item">
-            <span class="resume-period">2015 - 2019</span>
-            <h4 class="resume-title">B.S. Computer Science</h4>
-            <p class="resume-company">University of California</p>
-            <p class="resume-description">Graduated with honors. Specialized in software engineering and human-computer interaction.</p>
-          </div>
-          
-          <div class="resume-item">
-            <span class="resume-period">2022</span>
-            <h4 class="resume-title">UX Design Certification</h4>
-            <p class="resume-company">Google / Coursera</p>
-            <p class="resume-description">Comprehensive program covering user research, wireframing, prototyping, and usability testing.</p>
-          </div>
-          
-          <div class="resume-item">
-            <span class="resume-period">2021</span>
-            <h4 class="resume-title">AWS Solutions Architect</h4>
-            <p class="resume-company">Amazon Web Services</p>
-            <p class="resume-description">Professional certification for designing distributed systems on AWS cloud infrastructure.</p>
-          </div>
-          
           <div class="resume-item">
             <span class="resume-period">Ongoing</span>
             <h4 class="resume-title">Continuous Learning</h4>
             <p class="resume-company">Various Platforms</p>
-            <p class="resume-description">Regular courses on emerging technologies, design trends, and best practices through platforms like Frontend Masters and Egghead.</p>
+            <p class="resume-description">Regular courses on emerging technologies, design trends, and best practices
+              through platforms like Frontend Masters and Egghead.</p>
           </div>
         </div>
       </div>
-      
+
       <!-- Download Resume Button -->
       <div class="resume-download reveal">
-        <a href="#" class="btn-download">
+        <a href="/resume/Amar_Dhadbale_Resume.pdf" class="btn-download" download="Amar_Dhadbale_Resume.pdf"
+          target="_blank" rel="noopener">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-            <polyline points="7 10 12 15 17 10"/>
-            <line x1="12" y1="15" x2="12" y2="3"/>
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
           </svg>
           <span>Download Resume (PDF)</span>
         </a>
       </div>
+
     </div>
   </section>
 
@@ -282,52 +248,53 @@
           A snapshot of my coding activity and contribution consistency over time.
         </p>
       </div>
-      
+
       <div class="github-grid">
         <!-- Stats Cards -->
         <div class="github-stats">
           <div class="github-stat-card reveal stagger-1">
             <div class="github-stat-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
               </svg>
             </div>
             <div class="github-stat-number" data-count="48" data-suffix="">0</div>
             <div class="github-stat-label">Repositories</div>
           </div>
-          
+
           <div class="github-stat-card reveal stagger-2">
             <div class="github-stat-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
               </svg>
             </div>
             <div class="github-stat-number" data-count="1247" data-suffix="">0</div>
             <div class="github-stat-label">Contributions</div>
           </div>
-          
+
           <div class="github-stat-card reveal stagger-3">
             <div class="github-stat-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
             </div>
             <div class="github-stat-number" data-count="312" data-suffix="">0</div>
             <div class="github-stat-label">Stars Earned</div>
           </div>
-          
+
           <div class="github-stat-card reveal stagger-4">
             <div class="github-stat-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
               </svg>
             </div>
             <div class="github-stat-number" data-count="156" data-suffix="">0</div>
             <div class="github-stat-label">Day Streak</div>
           </div>
         </div>
-        
+
         <!-- Contribution Graph -->
         <div class="contribution-graph reveal">
           <div class="contribution-header">
@@ -344,21 +311,21 @@
               <span>More</span>
             </div>
           </div>
-          
+
           <div class="contribution-grid" id="contributionGrid">
             <!-- Generated by JavaScript -->
           </div>
-          
+
           <!-- Recent Activity -->
           <div class="activity-timeline">
             <h4>Recent Activity</h4>
-            
+
             <div class="activity-item">
               <div class="activity-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="4"/>
-                  <line x1="1.05" y1="12" x2="7" y2="12"/>
-                  <line x1="17.01" y1="12" x2="22.96" y2="12"/>
+                  <circle cx="12" cy="12" r="4" />
+                  <line x1="1.05" y1="12" x2="7" y2="12" />
+                  <line x1="17.01" y1="12" x2="22.96" y2="12" />
                 </svg>
               </div>
               <div class="activity-content">
@@ -366,11 +333,12 @@
                 <div class="activity-meta">2 hours ago</div>
               </div>
             </div>
-            
+
             <div class="activity-item">
               <div class="activity-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
                 </svg>
               </div>
               <div class="activity-content">
@@ -378,12 +346,12 @@
                 <div class="activity-meta">Yesterday</div>
               </div>
             </div>
-            
+
             <div class="activity-item">
               <div class="activity-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="9 11 12 14 22 4"/>
-                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                  <polyline points="9 11 12 14 22 4" />
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
                 </svg>
               </div>
               <div class="activity-content">
@@ -391,11 +359,12 @@
                 <div class="activity-meta">3 days ago</div>
               </div>
             </div>
-            
+
             <div class="activity-item">
               <div class="activity-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                 </svg>
               </div>
               <div class="activity-content">
@@ -422,87 +391,24 @@
           Feedback from clients, colleagues, and collaborators I've had the pleasure of working with.
         </p>
       </div>
-      
-      <div class="testimonials-slider">
-        <div class="testimonials-grid">
-          <div class="testimonial-card reveal stagger-1">
-            <div class="testimonial-content">
-              <p class="testimonial-text">"Alex transformed our vision into reality. The attention to detail and commitment to quality is exceptional. Our new platform exceeded all expectations."</p>
-            </div>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="David Chen" class="testimonial-avatar">
-              <div class="testimonial-info">
-                <h4>David Chen</h4>
-                <span>CEO, TechStart Inc.</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card reveal stagger-2">
-            <div class="testimonial-content">
-              <p class="testimonial-text">"Working with Alex was a game-changer for our team. The clean code, clear communication, and innovative solutions made the entire process smooth and enjoyable."</p>
-            </div>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Sarah Martinez" class="testimonial-avatar">
-              <div class="testimonial-info">
-                <h4>Sarah Martinez</h4>
-                <span>Product Manager, Innovate Co.</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card reveal stagger-3">
-            <div class="testimonial-content">
-              <p class="testimonial-text">"One of the most talented developers I've collaborated with. Alex brings both technical expertise and creative thinking to every project. Highly recommended."</p>
-            </div>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Michael Johnson" class="testimonial-avatar">
-              <div class="testimonial-info">
-                <h4>Michael Johnson</h4>
-                <span>Lead Designer, Creative Studio</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card reveal stagger-4">
-            <div class="testimonial-content">
-              <p class="testimonial-text">"Alex's ability to understand complex requirements and deliver elegant solutions is remarkable. The performance improvements alone were worth the investment."</p>
-            </div>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" alt="Emily Watson" class="testimonial-avatar">
-              <div class="testimonial-info">
-                <h4>Emily Watson</h4>
-                <span>CTO, DataFlow Systems</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card reveal stagger-5">
-            <div class="testimonial-content">
-              <p class="testimonial-text">"From concept to launch, Alex delivered a world-class e-commerce experience. The user engagement metrics speak for themselves - a 40% increase in conversions."</p>
-            </div>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="James Wilson" class="testimonial-avatar">
-              <div class="testimonial-info">
-                <h4>James Wilson</h4>
-                <span>Founder, StyleHouse</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card reveal stagger-5">
-            <div class="testimonial-content">
-              <p class="testimonial-text">"As a mentor, Alex has been instrumental in my growth as a developer. Patient, knowledgeable, and always willing to go the extra mile to help others succeed."</p>
-            </div>
-            <div class="testimonial-author">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="Lisa Park" class="testimonial-avatar">
-              <div class="testimonial-info">
-                <h4>Lisa Park</h4>
-                <span>Junior Developer, Mentee</span>
-              </div>
-            </div>
-          </div>
+
+  <template id="testimonial-template">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-content">
+        <p class="testimonial-text"></p>
+      </div>
+      <div class="testimonial-author">
+        <img class="testimonial-avatar" alt="">
+        <div class="testimonial-info">
+          <h4 class="testimonial-name"></h4>
+          <span class="testimonial-role"></span>
         </div>
+      </div>
+    </div>
+  </template>
+
+      <div class="testimonials-slider">
+        <div class="testimonials-grid" data-bind="testimonials.all"></div>
       </div>
     </div>
   </section>
@@ -512,12 +418,14 @@
     <div class="section-container">
       <div class="cta-content reveal">
         <h2>Ready to Build Something Great?</h2>
-        <p>I'm always excited to work on meaningful projects. Let's discuss how I can help bring your vision to life.</p>
+        <p>I'm always excited to work on meaningful projects. Let's discuss how I can help bring your vision to life.
+        </p>
         <div class="cta-buttons">
           <a href="contact.html" class="btn btn-cta">
             Get in Touch
-            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
           <a href="projects.html" class="btn btn-outline">
@@ -537,7 +445,7 @@
           <p data-bind="site.tagline"></p>
           <div class="footer-social" data-bind="socialLinks"></div>
         </div>
-        
+
         <div class="footer-column">
           <h4>Navigation</h4>
           <ul class="footer-links">
@@ -547,7 +455,7 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-        
+
         <div class="footer-column">
           <h4>Services</h4>
           <ul class="footer-links">
@@ -557,7 +465,7 @@
             <li><a href="#">Consulting</a></li>
           </ul>
         </div>
-        
+
         <div class="footer-column">
           <h4>Contact</h4>
           <ul class="footer-links">
@@ -566,7 +474,7 @@
           </ul>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
         <p>&copy; 2026 Alex Morgan. All rights reserved.</p>
         <p>Crafted with passion.</p>
@@ -577,4 +485,5 @@
   <!-- JavaScript -->
   <script src="js/main.js"></script>
 </body>
+
 </html>

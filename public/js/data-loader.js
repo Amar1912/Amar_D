@@ -504,6 +504,60 @@
     return t;
   }
 
+  // Resume renderer
+  function renderResume(data) {
+    const resume = data && data.resume ? data.resume : {};
+    const experience = Array.isArray(resume.experience) ? resume.experience : [];
+    const education = Array.isArray(resume.education) ? resume.education : [];
+
+    const cols = qAll('.resume-grid .resume-column');
+    const expCol = cols[0];
+    const eduCol = cols[1];
+    if (!expCol || !eduCol) return;
+
+    // Remove existing resume items (keep headers)
+    expCol.querySelectorAll('.resume-item').forEach(n => n.remove());
+    eduCol.querySelectorAll('.resume-item').forEach(n => n.remove());
+
+    experience.forEach(item => {
+      const node = createResumeItem(item, 'experience');
+      expCol.appendChild(node);
+    });
+
+    education.forEach(item => {
+      const node = createResumeItem(item, 'education');
+      eduCol.appendChild(node);
+    });
+  }
+
+  function createResumeItem(item, type) {
+    const wrap = el('div', 'resume-item reveal');
+    const period = el('span', 'resume-period');
+    const from = item.from || item.year || '';
+    const to = item.to || '';
+    period.textContent = from && to ? (from + ' - ' + to) : (from || to || '');
+
+    const title = el('h4', 'resume-title');
+    const company = el('p', 'resume-company');
+    const desc = el('p', 'resume-description');
+
+    if (type === 'experience') {
+      title.textContent = item.role || item.title || '';
+      company.textContent = item.company || '';
+      desc.textContent = item.desc || item.description || '';
+    } else {
+      title.textContent = item.degree || item.title || item.role || '';
+      company.textContent = item.institution || item.company || '';
+      desc.textContent = item.desc || item.description || '';
+    }
+
+    wrap.appendChild(period);
+    wrap.appendChild(title);
+    if (company.textContent) wrap.appendChild(company);
+    if (desc.textContent) wrap.appendChild(desc);
+    return wrap;
+  }
+
   function renderContact(data) {
     const container = q('[data-bind="contact.details"]');
     if (!container || !data.contact) return;
@@ -705,6 +759,7 @@
       renderGitHub(data);
       renderCertifications(data);
       renderTimeline(data);
+      renderResume(data);
       renderContact(data);
       renderSocialLinks(data);
       renderFooter(data);

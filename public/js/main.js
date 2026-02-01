@@ -191,28 +191,61 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Pointer-debug and fallback: if a pointerdown occurs on the toggle but the UI doesn't change,
-    // force the toggle after a short delay. This addresses cases where desktop responsive emulation
-    // or some environments suppress the click navigation while still sending pointer events.
+    // toggle the UI after a short delay. Also listen for pointerup as a backup (some devtools modes
+    // suppress click events).
     document.addEventListener('pointerdown', function(e) {
       const mt = e.target.closest('.menu-toggle');
       if (!mt) return;
       console.info('[pointer-debug] pointerdown on menu-toggle');
 
-      // If not already active shortly after the event, activate UI
+      // If the click didn't toggle the UI, toggle it explicitly
       setTimeout(function() {
         try {
           const mn = document.querySelector('.mobile-nav');
-          if (!mt.classList.contains('active')) {
-            console.warn('[pointer-debug] fallback: activating menu');
+          const mtActive = mt.classList.contains('active');
+          if (!mtActive) {
+            console.warn('[pointer-debug] fallback: activating menu (toggle on)');
             mt.classList.add('active');
             if (mn) mn.classList.add('active');
             document.body.style.overflow = 'hidden';
             mt.setAttribute('aria-expanded', 'true');
+          } else {
+            // If active but not matching mobileNav, ensure sync
+            if (mn && !mn.classList.contains('active')) {
+              console.warn('[pointer-debug] fallback: syncing mobile-nav (activating)');
+              mn.classList.add('active');
+            }
           }
         } catch (err) {
           console.warn('[pointer-debug] fallback error', err);
         }
       }, 60);
+    });
+
+    document.addEventListener('pointerup', function(e) {
+      const mt = e.target.closest('.menu-toggle');
+      if (!mt) return;
+      console.info('[pointer-debug] pointerup on menu-toggle');
+
+      // If pointerup occurs and the menu is not active, trigger the toggle (covers suppressed clicks)
+      try {
+        const mn = document.querySelector('.mobile-nav');
+        if (!mt.classList.contains('active')) {
+          console.warn('[pointer-debug] fallback on pointerup: toggling menu');
+          mt.classList.add('active');
+          if (mn) mn.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          mt.setAttribute('aria-expanded', 'true');
+        } else {
+          // if it was active, ensure mobile nav is in sync
+          if (mn && !mn.classList.contains('active')) {
+            console.warn('[pointer-debug] pointerup: syncing mobile-nav (activating)');
+            mn.classList.add('active');
+          }
+        }
+      } catch (err) {
+        console.warn('[pointer-debug] pointerup fallback error', err);
+      }
     });
 
     // Observe class changes for debugging
@@ -355,6 +388,88 @@ document.addEventListener('DOMContentLoaded', function() {
         localTimelineObserver.observe(item);
       });
     }
+
+    // Ensure testimonials slider initializes after dynamic data loads
+    (function initTestimonialsAfterData() {
+      const testimonialSlider = document.querySelector('.testimonials-slider');
+      if (!testimonialSlider) return;
+      if (testimonialSlider.dataset.testimonialsInitialized === 'true') return;
+
+      // Ensure grid is inside a track element the slider code expects
+      let track = testimonialSlider.querySelector('.testimonials-track');
+      const grid = testimonialSlider.querySelector('.testimonials-grid');
+      if (!track && grid) {
+        track = document.createElement('div');
+        track.className = 'testimonials-track';
+        testimonialSlider.insertBefore(track, grid);
+        track.appendChild(grid);
+      }
+
+      const cards = testimonialSlider.querySelectorAll('.testimonial-card');
+      if (!track || cards.length === 0) return;
+
+      // Create dots container if missing
+      let dotsContainer = testimonialSlider.querySelector('.testimonial-dots');
+      if (!dotsContainer) {
+        dotsContainer = document.createElement('div');
+        dotsContainer.className = 'testimonial-dots';
+        testimonialSlider.appendChild(dotsContainer);
+      }
+
+      testimonialSlider.dataset.testimonialsInitialized = 'true';
+
+      let currentIndex = 0;
+      let slidesPerView = 3;
+
+      function updateSlidesPerView() {
+        if (window.innerWidth <= 768) slidesPerView = 1;
+        else if (window.innerWidth <= 1024) slidesPerView = 2;
+        else slidesPerView = 3;
+      }
+
+      updateSlidesPerView();
+
+      function createDots() {
+        const totalDots = Math.ceil(cards.length / slidesPerView);
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalDots; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+          dot.addEventListener('click', function() { goToSlide(i * slidesPerView); });
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function updateSlider() {
+        const cardWidth = cards[0].offsetWidth + 32;
+        track.style.transform = 'translateX(-' + (currentIndex * cardWidth) + 'px)';
+        const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+        dots.forEach(function(dot, index) {
+          dot.classList.toggle('active', index === Math.floor(currentIndex / slidesPerView));
+        });
+      }
+
+      function goToSlide(idx) {
+        currentIndex = Math.max(0, Math.min(idx, Math.max(0, cards.length - slidesPerView)));
+        updateSlider();
+      }
+
+      // Prev/next buttons (optional)
+      const prevBtn = testimonialSlider.querySelector('.testimonial-prev');
+      const nextBtn = testimonialSlider.querySelector('.testimonial-next');
+      if (prevBtn) prevBtn.addEventListener('click', function() { goToSlide(Math.max(0, currentIndex - slidesPerView)); });
+      if (nextBtn) nextBtn.addEventListener('click', function() { goToSlide(Math.min(currentIndex + slidesPerView, Math.max(0, cards.length - slidesPerView))); });
+
+      window.addEventListener('resize', function() {
+        updateSlidesPerView();
+        createDots();
+        goToSlide(0);
+      });
+
+      createDots();
+      updateSlider();
+    })();
   });
   
   // ===================================

@@ -1,0 +1,23 @@
+{
+  "testimonials": [
+    {
+      "name": "David Chen",
+      "role": "CEO, TechStart Inc.",
+      "quote": "Great work.",
+      "avatar": "/images/testimonials/optimized/david-chen-160.webp",
+      "avatarAlt": "David Chen — CEO, TechStart Inc."
+    }
+  ],
+  "projects": [
+    {
+      "id": "analytics-dashboard",
+      "title": "Analytics Dashboard",
+      "thumb": "/images/projects/analytics-dashboard/optimized/thumb-300.jpg",
+      "hero": "/images/projects/analytics-dashboard/optimized/hero-1200.webp"
+    }
+  ],
+  "profile": {
+    "main": "/images/profile/optimized/main-400.webp",
+    "avatar": "/images/profile/optimized/avatar-80.webp"
+  }
+}

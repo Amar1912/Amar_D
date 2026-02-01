@@ -1,45 +1,47 @@
 {
   "site": {
-    "name": "Amar Morgan",
+    "name": "Amar Dhadbale",
     "role": "Creative Developer & Designer",
     "tagline": "Creative Developer & Designer crafting thoughtful digital experiences.",
     "meta": {
-      "title": "Amar Morgan | Creative Developer & Designer",
-      "description": "Creative Developer & Designer crafting digital experiences that inspire and engage.",
+      "title": "Amar Dhadbale | Creative Developer & Designer",
+      "description": "A curious Web Developer who loves building simple, beautiful, and functional websites.Always exploring new technologies and improving my skills.",
       "keywords": "portfolio, developer, designer, creative, web development",
-      "author": "Amar Morgan",
+      "author": "Amar Dhadbale",
       "themeColor": "#FDF6F0"
     }
   },
-
   "hero": {
     "tag": "Available for Projects",
-    "name": "Amar Morgan",
-    "subtitle": "Creative Developer & Designer crafting thoughtful digital experiences that blend design with robust engineering.",
+    "name": "Amar Dhadbale",
+    "subtitle": "A curious Web Developer who loves building simple, beautiful, and functional websites. Always exploring new technologies and improving my skills.",
     "buttons": {
-      "primary": { "text": "View Projects", "link": "projects.html" },
-      "secondary": { "text": "Get in Touch", "link": "contact.html" }
+      "primary": {
+        "text": "View Projects",
+        "link": "projects.html"
+      },
+      "secondary": {
+        "text": "Get in Touch",
+        "link": "contact.html"
+      }
     }
   },
-
   "intro": {
     "tag": "About Me",
-    "title": "Building digital products with purpose and precision.",
-    "body": "I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering.",
+    "title": "Hello, I’m Amar 👋 Developing Scalable Web Development Solutions",
+    "body": "ENTC student skilled in web development, embedded systems, and DSA-based problem solving.\nI enjoy building responsive web applications and solving logical challenges.\nFocused on learning, innovation, and practical implementation.",
     "ctaText": "Read My Story",
     "ctaLink": "journey.html"
   },
-
   "about": {
     "tag": "Hello",
-    "name": "Alex Morgan",
-    "p1": "I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.",
-    "p2": "Currently based in San Francisco, I've had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and digital product studios.",
-    "p3": "In my spare time, I'm usually exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee while sketching out new ideas. I believe in continuous learning and pushing the boundaries of what's possible on the web.",
+    "name": "Amar Dhadbale",
+    "p1": "I am an Electronics and Telecommunication (ENTC) student with a strong interest in building complete, real-world digital solutions. My primary focus is full-stack web development, where I work extensively with Laravel, HTML, CSS, and JavaScript to create structured, scalable, and user-focused applications.",
+    "p2": "I have solid experience in backend logic, database handling, and API integration, along with a strong command of frontend design and responsiveness. Alongside web development, I have practical knowledge of embedded systems, giving me a deeper understanding of how software interacts with hardware.",
+    "p3": "I actively solve problems using Data Structures and Algorithms, which helps me write optimized and maintainable code. My programming experience includes Python, C, C++, and JavaScript, allowing me to adapt across different domains and project requirements.",
     "ctaText": "Let's Connect",
     "ctaLink": "contact.html"
   },
-
   "_schema": {
     "site": "Object. Basic site metadata: name, role, tagline, meta (title/description/keywords).",
     "hero": "Object. Hero section: tag, name, subtitle, buttons (primary/secondary).",
@@ -57,68 +59,250 @@
     "footer": "Object. Footer strings like copyright and note.",
     "cta": "Object. Global CTA section with title, body, primary and secondary actions."
   },
-
   "stats": [
-    { "label": "Years Experience", "count": 5, "suffix": "+" },
-    { "label": "Projects Completed", "count": 50, "suffix": "+" },
-    { "label": "Happy Clients", "count": 30, "suffix": "+" }
+    {
+      "label": "Years Experience",
+      "count": 2,
+      "suffix": "+"
+    },
+    {
+      "label": "Projects Completed",
+      "count": 20,
+      "suffix": "+"
+    },
+    {
+      "label": "Happy Clients",
+      "count": 15,
+      "suffix": "+"
+    }
   ],
-
   "skills": {
     "cards": [
-      { "title": "Web Development", "desc": "Building performant, accessible websites and web applications.", "icon": "code" },
-      { "title": "UI/UX Design", "desc": "Creating intuitive interfaces and seamless user experiences.", "icon": "design" },
-      { "title": "Full Stack", "desc": "End-to-end development from database design to frontend polish.", "icon": "stack" },
-      { "title": "Performance", "desc": "Optimizing applications for speed and efficiency.", "icon": "speed" }
+      {
+        "title": "Web Development & Laravel",
+        "desc": "Designing and developing dynamic, scalable websites using Laravel with clean backend architecture, database integration, authentication, and responsive frontend design.",
+        "icon": "code"
+      },
+      {
+        "title": "Frontend & Landing Pages",
+        "desc": "Building modern landing pages and frontend projects using HTML, CSS, and JavaScript with a strong focus on responsiveness, layout structure, and user interaction.",
+        "icon": "design"
+      },
+      {
+        "title": "SEO Optimization",
+        "desc": "Improving website visibility through on-page SEO, performance optimization, proper structure, and search-engine-friendly content practices.",
+        "icon": "stack"
+      },
+      {
+        "title": "Embedded Systems Basics",
+        "desc": "Developing basic embedded projects using microcontrollers, sensors, and logic-based programming to understand hardware–software interaction.",
+        "icon": "speed"
+      }
     ],
     "progress": [
       {
-        "category": "Frontend Development",
+        "category": "Web & Full Stack Development",
         "items": [
-          { "name": "React / Next.js", "percent": 95 },
-          { "name": "TypeScript", "percent": 90 },
-          { "name": "CSS / Tailwind", "percent": 92 },
-          { "name": "Animation (GSAP/Framer)", "percent": 85 }
+          {
+            "name": "HTML & CSS",
+            "percent": 92
+          },
+          {
+            "name": "JavaScript",
+            "percent": 82
+          },
+          {
+            "name": "PHP",
+            "percent": 85
+          },
+          {
+            "name": "React.js",
+            "percent": 75
+          },
+          {
+            "name": "Laravel Development",
+            "percent": 90
+          }
         ]
       },
       {
-        "category": "Backend & Database",
+        "category": "Programming Languages",
+        "icon": "/icons/web-dev.svg",
         "items": [
-          { "name": "Node.js / Express", "percent": 88 },
-          { "name": "PostgreSQL / MongoDB", "percent": 85 },
-          { "name": "GraphQL / REST APIs", "percent": 90 },
-          { "name": "Python", "percent": 75 }
+          {
+            "name": "C",
+            "percent": 80
+          },
+          {
+            "name": "C++",
+            "percent": 75
+          },
+          {
+            "name": "Python",
+            "percent": 70
+          },
+          {
+            "name": "JavaScript",
+            "percent": 82
+          },
+          {
+            "name": "PHP",
+            "percent": 85
+          }
+        ]
+      },
+      {
+        "category": "Tools & Technologies",
+        "items": [
+          {
+            "name": "Git & GitHub",
+            "percent": 85
+          },
+          {
+            "name": "XAMPP / MySQL",
+            "percent": 88
+          },
+          {
+            "name": "Node.js",
+            "percent": 70
+          },
+          {
+            "name": "VS Code",
+            "percent": 92
+          }
+        ]
+      },
+      {
+        "category": "Android & Cross-Platform Development",
+        "items": [
+          {
+            "name": "Flutter",
+            "percent": 75
+          },
+          {
+            "name": "Dart",
+            "percent": 74
+          },
+          {
+            "name": "Firebase",
+            "percent": 78
+          }
+        ]
+      },
+      {
+        "category": "SEO & Optimization",
+        "items": [
+          {
+            "name": "On-Page SEO",
+            "percent": 82
+          },
+          {
+            "name": "Performance Optimization",
+            "percent": 79
+          },
+          {
+            "name": "Technical SEO Basics",
+            "percent": 75
+          }
         ]
       }
     ]
   },
-
   "timeline": [
-    { "year": "2018 — The Beginning", "title": "Discovering the Craft", "description": "Started my journey with HTML, CSS and JavaScript; built first websites and enrolled in CS." },
-    { "year": "2019 — First Steps", "title": "Junior Developer", "description": "Worked at a small agency, delivered client projects and learned React and modern CSS." },
-    { "year": "2020 — Growth", "title": "Frontend Developer", "description": "Built scalable apps, led frontend architecture for SaaS product." },
-    { "year": "2021 — Expansion", "title": "Full Stack Developer", "description": "Expanded into backend, databases, and cloud infrastructure." },
-    { "year": "2023 — Leadership", "title": "Senior Developer", "description": "Led technical initiatives and mentored engineers." },
-    { "year": "2024 — Present", "title": "Independent Creative Developer", "description": "Working independently on select, high-impact projects." }
+    {
+      "year": "2021 — 2023 Foundation",
+      "title": "Academic & Programming Basics",
+      "description": "Completed secondary and  Higher Secondary education and built early foundations in logic, C, and C++."
+    },
+    {
+      "year": "2023 — Engineering Journey",
+      "title": "ENTC Undergraduate",
+      "description": "Started B.E. in Electronics & Telecommunication Engineering and strengthened core technical skills."
+    },
+    {
+      "year": "Sep 2023 — Web Foundations",
+      "title": "Frontend Development",
+      "description": "Learned HTML, CSS, and JavaScript; built responsive websites and frontend projects."
+    },
+    {
+      "year": "Early 2024 — Frontend Growth",
+      "title": "React Developer",
+      "description": "Built component-based UIs using React and modern frontend practices."
+    },
+    {
+      "year": "Mar–Apr 2024 — Industry Exposure",
+      "title": "Full Stack Web Development Intern",
+      "description": "Worked with PHP, MySQL, and JavaScript on dynamic, database-driven web applications."
+    },
+    {
+      "year": "2024 — Problem Solving",
+      "title": "DSA & Logical Thinking",
+      "description": "Focused on data structures and algorithms to improve efficiency and coding structure."
+    },
+    {
+      "year": "Late 2024 — Hardware Integration",
+      "title": "Embedded Systems Practice",
+      "description": "Built Arduino-based projects involving sensors, automation, and monitoring."
+    },
+    {
+      "year": "2025 — Backend & Mobile",
+      "title": "Laravel & App Development",
+      "description": "Developed full-stack applications with Laravel and explored Flutter-based mobile development."
+    }
   ],
-
   "github": {
-    "repos": 48,
-    "contributions": 1247,
-    "stars": 312,
-    "streak": 156
+    "repos": 21,
+    "contributions": 107,
+    "stars": 0,
+    "followers": 2,
+    "avatar": "https://avatars.githubusercontent.com/u/163174930?v=4",
+    "profileUrl": "https://github.com/Amar1912"
   },
-
-  "resume": {
-    "experience": [
-      { "company": "Creative Studio", "role": "Senior Developer", "from": "2023", "to": "Present", "desc": "Led frontend for high-profile client projects." },
-      { "company": "TechStart Inc.", "role": "Frontend Developer", "from": "2020", "to": "2023", "desc": "Built scalable web apps and dashboards." }
-    ],
-    "education": [
-      { "institution": "State University", "degree": "B.S. Computer Science", "from": "2015", "to": "2019" }
-    ]
-  },
-
+ "resume": {
+  "experience": [
+    {
+      "company": "Shiv Sai Tours (Client Project)",
+      "role": "Web Developer",
+      "from": "2024",
+      "to": "Present",
+      "desc": "Designed and developed a professional tours and travel business website using HTML, CSS, JavaScript, PHP, and Laravel. Implemented responsive layouts, service pages, contact forms, and SEO-friendly structure to enhance online visibility and customer engagement."
+    },
+    {
+      "company": "1Stop.ai",
+      "role": "Full Stack Web Development Intern",
+      "from": "Mar 2024",
+      "to": "Apr 2024",
+      "desc": "Worked on dynamic web applications using PHP, MySQL, HTML, CSS, and JavaScript. Implemented CRUD operations, form handling, and responsive UI while gaining practical experience in full-stack development."
+    },
+    {
+      "company": "Wisdom Sprouts IT Training Hub",
+      "role": "Cloud Computing Intern",
+      "from": "2024",
+      "to": "2024",
+      "desc": "Completed hands-on cloud computing internship covering cloud fundamentals, virtualization concepts, and basic deployment workflows. Gained exposure to cloud services, infrastructure concepts, and practical use cases."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Matoshri College of Engineering, Nashik",
+      "degree": "Bachelor of Engineering (B.E.) in Electronics & Telecommunication Engineering",
+      "from": "2023",
+      "to": "2027 (Pursuing)"
+    },
+    {
+      "institution": "Sanjivani Sainiki School, Maharashtra",
+      "degree": "Secondary Education (Class 10)",
+      "from": "2020",
+      "to": "2021"
+    },
+    {
+      "institution": "Sanjivani Sainiki School, Maharashtra",
+      "degree": "Higher Secondary Education (Class 12)",
+      "from": "2022",
+      "to": "2023"
+    }
+  ]
+},
   "projects": [
     {
       "id": "analytics-dashboard",
@@ -128,9 +312,19 @@
       "fullDescription": "Analytics Dashboard is a data-first web application providing customizable dashboards, interactive charts and advanced filtering for enterprise analytics teams.",
       "problem": "Customers lacked a unified view of KPI data across services.",
       "solution": "Built a modular dashboard with real-time streams, reusable widgets, and exportable reports.",
-      "impact": ["Reduced reporting time by 60%", "Improved decision-making with real-time KPIs"],
-      "techStack": ["React", "TypeScript", "D3.js", "GraphQL"],
-      "images": ["https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop"],
+      "impact": [
+        "Reduced reporting time by 60%",
+        "Improved decision-making with real-time KPIs"
+      ],
+      "techStack": [
+        "React",
+        "TypeScript",
+        "D3.js",
+        "GraphQL"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop"
+      ],
       "liveUrl": "#",
       "repoUrl": "https://github.com/Amar1912/analytics-dashboard",
       "featured": true
@@ -143,9 +337,18 @@
       "fullDescription": "Luxe Marketplace is designed for high-end retailers with personalized storefronts, advanced inventory sync, and a frictionless checkout flow.",
       "problem": "Site conversions were low due to slow checkout and limited personalization.",
       "solution": "Implemented server-side rendering, personalized recommendations, and a streamlined checkout path.",
-      "impact": ["Increased conversion rate by 18%", "Average order value up by 12%"],
-      "techStack": ["Next.js", "Stripe", "Tailwind CSS"],
-      "images": ["https://images.unsplash.com/photo-1555421689-491a97ff2040?w=1200&h=800&fit=crop"],
+      "impact": [
+        "Increased conversion rate by 18%",
+        "Average order value up by 12%"
+      ],
+      "techStack": [
+        "Next.js",
+        "Stripe",
+        "Tailwind CSS"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=1200&h=800&fit=crop"
+      ],
       "liveUrl": "#",
       "repoUrl": "https://github.com/Amar1912/luxe-marketplace",
       "featured": true
@@ -158,9 +361,18 @@
       "fullDescription": "FinFlow is a mobile-first banking experience with biometric login, instant transfers, and contextual notifications.",
       "problem": "Customers had difficulty with transaction visibility and authentication.",
       "solution": "Designed secure biometric flows and a unified feed for transactions and notifications.",
-      "impact": ["Increased daily active users by 25%", "Improved retention metrics"],
-      "techStack": ["React Native", "Node.js", "PostgreSQL"],
-      "images": ["https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop"],
+      "impact": [
+        "Increased daily active users by 25%",
+        "Improved retention metrics"
+      ],
+      "techStack": [
+        "React Native",
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&h=800&fit=crop"
+      ],
       "liveUrl": "#",
       "repoUrl": "https://github.com/Amar1912/finflow",
       "featured": true
@@ -173,27 +385,48 @@
       "fullDescription": "An immersive portfolio site combining 3D visuals and a content-managed backend for editorial updates.",
       "problem": "Agency needed a flexible showcase for evolving case studies.",
       "solution": "Delivered a fast, editor-friendly site with custom CMS integration and high-performance assets.",
-      "impact": ["Won 2 design awards", "Improved content velocity"],
-      "techStack": ["Three.js", "GSAP", "Sanity"],
-      "images": ["https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1200&h=800&fit=crop"],
+      "impact": [
+        "Won 2 design awards",
+        "Improved content velocity"
+      ],
+      "techStack": [
+        "Three.js",
+        "GSAP",
+        "Sanity"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1200&h=800&fit=crop"
+      ],
       "liveUrl": "#",
       "repoUrl": "https://github.com/Amar1912/artisan-studio",
       "featured": false
     }
   ],
-
   "testimonials": [
-    { "name": "David Chen", "role": "CEO, TechStart Inc.", "quote": "Amar transformed our vision into reality. The attention to detail and commitment to quality is exceptional.", "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" },
-    { "name": "Sarah Martinez", "role": "Product Manager, Innovate Co.", "quote": "Working with Amar was a game-changer. Clean code, clear communication, innovative solutions.", "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" },
-    { "name": "Michael Johnson", "role": "Lead Designer, Creative Studio", "quote": "One of the most talented developers I've collaborated with.", "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" }
-  ],
-
+  {
+    "name": "Vishal Kaklij",
+    "role": "Founder, Shiv Sai Tours",
+    "quote": "Amar delivered a clean, professional website that perfectly represents our tours and travel business. The site is responsive, easy to use, and helped us establish a strong online presence.",
+    "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop"
+  },
+  {
+    "name": "Samruddhi Jadhav",
+    "role": "Content Creator & Blogger",
+    "quote": "The blog website Amar developed is smooth, well-structured, and easy to manage. The design and frontend flow made content publishing simple and visually appealing.",
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+  },
+  {
+    "name": "Vinod Nikam",
+    "role": "Business Owner",
+    "quote": "Amar optimized our website with proper SEO practices, improving structure, performance, and visibility. The results were noticeable, and the overall site quality improved significantly.",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+  }
+],
   "certificationsPage": {
     "tag": "Certifications",
     "title": "Certifications & Credentials",
     "description": "Professional certifications and coursework that demonstrate skills across cloud, programming, and design."
   },
-
   "certifications": [
     {
       "id": "web-performance-cert",
@@ -233,31 +466,48 @@
       "category": "Programming"
     }
   ],
-
   "contact": {
-    "email": "hello@Amarmorgan.dev",
-    "emailLink": "mailto:hello@Amarmorgan.dev",
+    "email": "hello@AmarDhadbale.dev",
+    "emailLink": "mailto:hello@AmarDhadbale.dev",
     "location": "San Francisco, California",
     "availability": "Open to new projects",
-    "cta": { "text": "Let's Connect", "link": "contact.html" }
+    "cta": {
+      "text": "Let's Connect",
+      "link": "contact.html"
+    }
   },
-
   "socialLinks": [
-    { "platform": "GitHub", "url": "https://github.com/Amar1912" },
-    { "platform": "LinkedIn", "url": "https://linkedin.com/in/Amarmorgan" },
-    { "platform": "Twitter", "url": "https://twitter.com/Amarmorgandesign" },
-    { "platform": "Dribbble", "url": "https://dribbble.com/Amarmorgan" }
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/Amar1912"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/AmarDhadbale"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/AmarDhadbaledesign"
+    },
+    {
+      "platform": "Dribbble",
+      "url": "https://dribbble.com/AmarDhadbale"
+    }
   ],
-
   "footer": {
-    "copyright": "© 2026 Amar Morgan. All rights reserved.",
+    "copyright": "© 2026 Amar Dhadbale. All rights reserved.",
     "note": "Crafted with passion."
   },
-
   "cta": {
     "title": "Let's Work Together",
     "body": "Have a project in mind? I'd love to hear about it. Let's create something amazing together.",
-    "primary": { "text": "Start a Conversation", "link": "contact.html" },
-    "secondary": { "text": "hello@Amarmorgan.dev", "link": "mailto:hello@Amarmorgan.dev" }
+    "primary": {
+      "text": "Start a Conversation",
+      "link": "contact.html"
+    },
+    "secondary": {
+      "text": "hello@AmarDhadbale.dev",
+      "link": "mailto:hello@AmarDhadbale.dev"
+    }
   }
 }
