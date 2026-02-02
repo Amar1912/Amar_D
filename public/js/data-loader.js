@@ -299,8 +299,6 @@
     if (!root) return;
     const txt = root.querySelector('.testimonial-text');
     if (txt) txt.textContent = t.quote || '';
-    const avatar = root.querySelector('.testimonial-avatar');
-    if (avatar && t.avatar) avatar.setAttribute('data-src', t.avatar);
     const name = root.querySelector('.testimonial-name');
     if (name) name.textContent = t.name || '';
     const role = root.querySelector('.testimonial-role');
@@ -349,68 +347,124 @@
   function renderSkillsCards(data) {
     const container = q('[data-bind="skills.cards"]');
     if (!container || !data.skills || !Array.isArray(data.skills.cards)) return;
+
     const tpl = document.getElementById('skill-card-template');
     container.innerHTML = '';
+
     data.skills.cards.forEach(s => {
-      const node = tpl ? tpl.content.cloneNode(true) : createSkillCardNode(s);
-      // populate
-      const title = node.querySelector && node.querySelector('.skill-title');
+      const node = tpl
+        ? tpl.content.cloneNode(true)
+        : createSkillCardNode(s);
+
+      // title
+      const title = node.querySelector('.skill-title');
       if (title) title.textContent = s.title || '';
-      const desc = node.querySelector && node.querySelector('.skill-desc');
+
+      // description
+      const desc = node.querySelector('.skill-desc');
       if (desc) desc.textContent = s.desc || '';
-      const icon = node.querySelector && node.querySelector('.skill-icon');
-      if (icon) {
-        // for simplicity keep icon slot empty or place a small initial
-        icon.textContent = '';
+
+      // ICON (PNG from JSON path)
+      const icon = node.querySelector('.skill-icon');
+      if (icon && s.icon) {
+        const img = document.createElement('img');
+        img.src = s.icon;
+        img.alt = s.title || 'skill icon';
+        img.loading = 'lazy';
+
+        icon.innerHTML = '';
+        icon.appendChild(img);
       }
+
       container.appendChild(node);
     });
   }
 
   function createSkillCardNode(s) {
     const card = el('div', 'skill-card reveal');
+
     const icon = el('div', 'skill-icon');
+
     const h3 = el('h3');
     h3.className = 'skill-title';
+
     const p = el('p');
     p.className = 'skill-desc';
+
     card.appendChild(icon);
     card.appendChild(h3);
     card.appendChild(p);
+
     return card;
   }
-
   function renderSkillsProgress(data) {
     const container = q('[data-bind="skills.progress"]');
     if (!container || !data.skills || !Array.isArray(data.skills.progress)) return;
+
     container.innerHTML = '';
+
     const tpl = document.getElementById('skill-progress-template');
     const itemTpl = document.getElementById('skill-progress-item-template');
 
     data.skills.progress.forEach(category => {
-      let catNode = tpl ? tpl.content.cloneNode(true) : createSkillProgressNode(category);
-      // fill category title
-      const title = catNode.querySelector && catNode.querySelector('.skills-category-title');
-      if (title) title.textContent = category.category || '';
-      const itemsWrap = catNode.querySelector && catNode.querySelector('.skills-category-items');
-      if (itemsWrap) {
-        (category.items || []).forEach(it => {
-          let itNode = itemTpl ? itemTpl.content.cloneNode(true) : createSkillProgressItemNode(it);
-          const nameEl = itNode.querySelector && itNode.querySelector('.skill-progress-name');
+      const frag = tpl
+        ? tpl.content.cloneNode(true)
+        : createSkillProgressNode(category);
+
+      // 🔑 IMPORTANT: resolve fragment → element
+      const root = resolveRoot(frag);
+      if (!root) return;
+
+      // TITLE
+      const title = root.querySelector('.skills-category-title');
+      if (title) title.textContent = category.category || category.title || '';
+
+      // ICON
+      const icon = root.querySelector('.skills-category-icon');
+      if (icon && category.icon) {
+        const img = document.createElement('img');
+        img.src = category.icon;
+        img.alt = title?.textContent || 'skill category icon';
+        img.loading = 'lazy';
+        icon.innerHTML = '';
+        icon.appendChild(img);
+      }
+
+      // ITEMS
+      const itemsWrap = root.querySelector('.skills-category-items');
+      if (itemsWrap && Array.isArray(category.items)) {
+        category.items.forEach(it => {
+          const itFrag = itemTpl
+            ? itemTpl.content.cloneNode(true)
+            : createSkillProgressItemNode(it);
+
+          const itRoot = resolveRoot(itFrag);
+          if (!itRoot) return;
+
+          const nameEl = itRoot.querySelector('.skill-progress-name');
           if (nameEl) nameEl.textContent = it.name || '';
-          const pctEl = itNode.querySelector && itNode.querySelector('.skill-progress-percent');
-          if (pctEl) pctEl.textContent = (it.percent || 0) + '%';
-          const fill = itNode.querySelector && itNode.querySelector('.skill-progress-fill');
+
+          const pctEl = itRoot.querySelector('.skill-progress-percent');
+          if (pctEl) pctEl.textContent = `${it.percent || 0}%`;
+
+          const fill = itRoot.querySelector('.skill-progress-fill');
           if (fill) {
-            fill.setAttribute('data-progress', it.percent || 0);
-            fill.style.width = '0%'; // keep initial width 0 so any animation can handle it
+            fill.style.width = '0%';
+            fill.dataset.progress = it.percent || 0;
+            requestAnimationFrame(() => {
+              fill.style.width = `${it.percent || 0}%`;
+            });
           }
-          itemsWrap.appendChild(itNode);
+
+          itemsWrap.appendChild(itFrag);
         });
       }
-      container.appendChild(catNode);
+
+      container.appendChild(frag);
     });
   }
+
+
 
   function createSkillProgressNode(category) {
     const node = el('div', 'skills-category reveal');
@@ -452,7 +506,8 @@
     container.appendChild(line);
 
     data.timeline.forEach(item => {
-      const node = tpl ? tpl.content.cloneNode(true) : createTimelineNode(item);
+      const frag = tpl ? tpl.content.cloneNode(true) : createSkillCardNode(s);
+      const node = resolveRoot(frag);
       const root = resolveRoot(node);
       if (!root) return;
       const year = root.querySelector('.timeline-year');
@@ -638,23 +693,7 @@
   }
 
   // Render GitHub / work progress stats (optional object in portfolio.json)
-  function renderGitHub(data) {
-    if (!data.github) return;
-    const container = q('[data-bind="github"]');
-    // Populate numeric stat elements inside the container that declare `data-bind="github.<key>"`
-    if (container) {
-      const els = container.querySelectorAll('[data-bind^="github."]');
-      els.forEach(function (el) {
-        const path = el.getAttribute('data-bind');
-        const value = get(data, path);
-        if (value !== undefined) {
-          // Set up counter-friendly attributes
-          el.setAttribute('data-count', value);
-          el.textContent = '0';
-        }
-      });
-    }
-  }
+ 
 
   // Render project detail page when `project.html?id=...` is opened
   function renderProjectPage(data) {
@@ -751,17 +790,6 @@
     if (project.title && data.site && data.site.name) document.title = project.title + ' — ' + data.site.name;
   }
 
-  function renderFooter(data) {
-    const elCopy = q('.footer-bottom p');
-    // default footer already exists, keep as-is unless data.footer provides values
-    if (data.footer && data.footer.copyright) {
-      const bottom = q('.footer-bottom');
-      if (bottom) bottom.querySelector('p').textContent = data.footer.copyright;
-      // second paragraph
-      const ps = bottom.querySelectorAll('p');
-      if (ps[1] && data.footer.note) ps[1].textContent = data.footer.note;
-    }
-  }
 
 
 
@@ -784,13 +812,11 @@
       renderStats(data);
       renderSkillsCards(data);
       renderSkillsProgress(data);
-      renderGitHub(data);
       renderCertifications(data);
       renderTimeline(data);
       renderResume(data);
       renderContact(data);
       renderSocialLinks(data);
-      renderFooter(data);
 
       // Page-specific: project detail
       renderProjectPage(data);
@@ -828,5 +854,7 @@
     }).catch(err => {
       console.error('[data-loader] failed to load', err);
     });
+  
+
   }
 })();

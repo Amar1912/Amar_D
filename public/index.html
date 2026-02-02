@@ -1,21 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative Developer & Designer crafting digital experiences that inspire and engage.">
+  <meta name="description"
+    content="Creative Developer & Designer crafting digital experiences that inspire and engage.">
   <meta name="keywords" content="portfolio, developer, designer, creative, web development">
-  <meta name="author" content="Alex Morgan">
+  <meta name="author" content="Amar Dhadbale">
   <meta name="theme-color" content="#FDF6F0">
-  
-  <title>Alex Morgan | Creative Developer & Designer</title>
-  
+
+  <title>Amar Dhadbale | Creative Developer & Designer</title>
+
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="icon.svg">
-  
+  <link rel="icon" type="image/x-icon" href="/images/profile/Screenshot 2026-02-02 235458.ico">
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* =========================
+   CTA SECTION
+   ========================= */
+
+    .cta-section {
+      position: relative;
+      padding: 140px 0;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .cta-section::after {
+      content: "";
+      position: absolute;
+      top: -30%;
+      right: -15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 122, 24, 0.25), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-content {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-content h2 {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .cta-content p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #cfcfcf;
+      margin-bottom: 48px;
+    }
+
+    /* Buttons */
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      background: #ff6a00;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-cta:hover {
+      background: #ff8f3a;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      padding: 16px 28px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: #fff;
+      background: rgb(249, 120, 7);
+    }
+
+    /* Icon */
+    .btn-icon {
+      transition: transform 0.25s ease;
+    }
+
+    .btn-cta:hover .btn-icon {
+      transform: translateX(4px);
+    }
+
+    /* =========================
+   RESPONSIVE
+   ========================= */
+
+    @media (max-width: 768px) {
+      .cta-section {
+        padding: 100px 0;
+      }
+
+      .cta-content h2 {
+        font-size: 2.2rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
   <!-- Page Loader -->
@@ -29,7 +150,7 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">AM.</a>
-      
+
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -37,7 +158,7 @@
         <li><a href="certifications.html">Certifications</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      
+
       <div class="menu-toggle">
         <span></span>
         <span></span>
@@ -45,7 +166,7 @@
       </div>
     </div>
   </nav>
-  
+
   <!-- Mobile Navigation -->
   <div class="mobile-nav">
     <ul class="mobile-nav-links">
@@ -61,29 +182,35 @@
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
-        <div class="hero-tag">
-          <span class="hero-tag-line"></span>
-          <span>Available for Projects</span>
+        <div class="left">
+          <div class="hero-tag">
+            <span class="hero-tag-line"></span>
+            <span>Available for Projects</span>
+          </div>
+
+          <h1 class="hero-title" data-bind="hero.name"></h1>
+
+          <p class="hero-subtitle" data-bind="hero.subtitle"></p>
+
+          <div class="hero-buttons">
+            <a href="projects.html" class="btn btn-primary">
+              View Projects
+              <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-secondary">
+              Get in Touch
+            </a>
+          </div>
         </div>
-        
-        <h1 class="hero-title" data-bind="hero.name"></h1>
-        
-        <p class="hero-subtitle" data-bind="hero.subtitle"></p>
-        
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn btn-primary">
-            View Projects
-            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="contact.html" class="btn btn-secondary">
-            Get in Touch
-          </a>
+        <div class="right">
+          <img src="images/profile/AVATAR.png" alt="">
         </div>
       </div>
     </div>
-    
+
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
       <span>Scroll</span>
@@ -104,12 +231,13 @@
           <p data-bind="intro.body"></p>
           <a href="journey.html" class="btn btn-secondary" data-bind-link="intro.ctaLink">
             <span data-bind="intro.ctaText"></span>
-            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>
-        
+
         <div class="intro-stats reveal-right" data-bind="stats"></div>
       </div>
     </div>
@@ -131,7 +259,7 @@
           Specialized in creating beautiful, functional, and user-centered digital experiences.
         </p>
       </div>
-      
+
       <div class="skills-grid" data-bind="skills.cards"></div>
     </div>
   </section>
@@ -167,99 +295,21 @@
           A selection of recent projects that showcase my approach to design and development.
         </p>
       </div>
-      
+
       <div class="projects-grid" data-bind="projects.featured"></div>
-      
+
       <div class="section-footer reveal" style="text-align: center; margin-top: 60px;">
         <a href="projects.html" class="btn btn-primary">
           View All Projects
-          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- GitHub Work Progress -->
-  <section class="github-section" data-bind="github" style="background: var(--bg-secondary);">
-    <div class="section-container">
-      <div class="section-header reveal" style="text-align:center; max-width:600px; margin: 0 auto 64px;">
-        <div class="section-tag" style="justify-content:center;">
-          <span class="section-tag-line"></span>
-          <span>Activity</span>
-        </div>
-        <h2 class="section-title">Work & Progress</h2>
-        <p class="section-description" style="margin: 0 auto;">A snapshot of my coding activity and contribution consistency over time.</p>
-      </div>
-
-      <div class="github-grid">
-        <div class="github-stats">
-          <div class="github-stat-card reveal stagger-1">
-            <div class="github-stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-              </svg>
-            </div>
-            <div class="github-stat-number stat-number" data-bind="github.repos">0</div>
-            <div class="github-stat-label">Repositories</div>
-          </div>
-
-          <div class="github-stat-card reveal stagger-2">
-            <div class="github-stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-              </svg>
-            </div>
-            <div class="github-stat-number stat-number" data-bind="github.contributions">0</div>
-            <div class="github-stat-label">Contributions</div>
-          </div>
-
-          <div class="github-stat-card reveal stagger-3">
-            <div class="github-stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-              </svg>
-            </div>
-            <div class="github-stat-number stat-number" data-bind="github.stars">0</div>
-            <div class="github-stat-label">Stars Earned</div>
-          </div>
-
-          <div class="github-stat-card reveal stagger-4">
-            <div class="github-stat-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <div class="github-stat-number stat-number" data-bind="github.streak">0</div>
-            <div class="github-stat-label">Day Streak</div>
-          </div>
-        </div>
-
-        <div class="contribution-graph reveal">
-          <div class="contribution-header">
-            <h3>Contribution Activity</h3>
-            <div class="contribution-legend">
-              <span>Less</span>
-              <div class="legend-squares">
-                <div class="legend-square level-0"></div>
-                <div class="legend-square level-1"></div>
-                <div class="legend-square level-2"></div>
-                <div class="legend-square level-3"></div>
-                <div class="legend-square level-4"></div>
-              </div>
-              <span>More</span>
-            </div>
-          </div>
-
-          <div class="contribution-grid" id="contributionGrid">
-            <!-- Generated by JavaScript or left empty -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- Testimonials Preview Section -->
@@ -275,14 +325,15 @@
           Trusted by clients and collaborators around the world.
         </p>
       </div>
-      
+
       <div class="testimonials-grid" data-bind="testimonials.preview"></div>
-      
+
       <div class="section-footer reveal" style="text-align: center; margin-top: 48px;">
         <a href="journey.html#testimonials" class="btn btn-secondary">
           Read More Testimonials
-          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
       </div>
@@ -293,20 +344,22 @@
   <section class="cta-section">
     <div class="section-container">
       <div class="cta-content reveal">
-        <h2 data-bind="cta.title"></h2>
-        <p data-bind="cta.body"></p>
+        <h2 data-bind="cta.title">Let's Work Together</h2>
+        <p data-bind="cta.body">Ready to bring your ideas to life? Let's discuss your project and create something
+          amazing together.</p>
         <div class="cta-buttons">
           <a href="contact.html" class="btn btn-cta" data-bind-link="cta.primary.link">
-            <span data-bind="cta.primary.text"></span>
-            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <span data-bind="cta.primary.text">Contact me</span>
+            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
-          <a class="btn btn-outline" data-bind-link="cta.secondary.link">
-            <span data-bind="cta.secondary.text"></span>
+          <a href="mailto:amardhadbale@gmail.com" class="btn btn-outline">
+            amardhadbale@gmail.com
           </a>
         </div>
-      </div> 
+      </div>
     </div>
   </section>
 
@@ -323,7 +376,7 @@
           <span class="project-view">
             View Project
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </span>
         </div>
@@ -396,4 +449,5 @@
   <script src="js/main.js"></script>
   <script src="footer.js"></script>
 </body>
+
 </html>

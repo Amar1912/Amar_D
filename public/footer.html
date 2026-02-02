@@ -1,47 +1,201 @@
-<!-- footer.html - template used by footer.js -->
+<!-- footer.html -->
 <template id="footer-template">
+
+  <style>
+    /* ===================================
+       FOOTER
+       =================================== */
+
+    .footer {
+      padding: 80px 0 40px;
+      background: var(--bg-secondary);
+      color: var(--color-black);
+    }
+
+    /* Grid */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    /* Brand */
+    .footer-brand h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      color: var(--color-gray);
+      line-height: 1.6;
+    }
+
+    /* Social */
+    .footer-social {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .social-link {
+      width: 33px;
+      height:33px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-black);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      transition: all var(--transition-fast);
+    }
+
+    .social-link:hover {
+      background: var(--color-orange);
+      transform: translateY(-4px);
+    }
+
+    /* Center content in the last footer column (tribute) */
+    .footer-column:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+
+    /* Emoji line styling */
+    .footer-column:last-child p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+
+    /* Links */
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.95rem;
+      color: var(--color-gray);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .footer-links a:hover {
+      color: var(--color-orange);
+    }
+
+    /* Bottom */
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .footer-bottom-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 0.875rem;
+      color: var(--color-gray-light);
+    }
+
+    /* ===================================
+       RESPONSIVE
+       =================================== */
+
+    @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer {
+        padding: 60px 0 30px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom-inner {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+
   <footer class="footer" role="contentinfo">
     <div class="section-container">
       <div class="footer-grid">
+
+        <!-- Brand -->
         <div class="footer-brand">
+          <img data-img="brand-logo" alt="Brand Logo" />
           <h3 data-text="brand-name"></h3>
           <p data-text="brand-tagline"></p>
-          <div class="footer-social" aria-label="Social links">
-            <ul data-list="social"></ul>
+
+          <div class="footer-social">
+            <a href="https://wa.me/919579703674" target="_blank"> <i class="fa-brands fa-whatsapp social-link"></i></a>
+            <a href="https://www.instagram.com/amar_d_1523?igsh=M2Fmem00MjFtMjdl" target="_blank"> <i class="fa-brands fa-instagram social-link"></i></a>
+            <a href="https://github.com/Amar1912" target="_blank"><i class="fa-brands fa-github social-link "></i></a>
+            <a href="https://www.linkedin.com/in/amar-dhadbale-719902303" target="_blank"><i class="fa-brands fa-linkedin social-link"></i></a>
           </div>
         </div>
 
+        <!-- Quick Links -->
         <div class="footer-column">
-          <h4>Navigation</h4>
+          <h4>Quick Links</h4> <br>
           <ul class="footer-links" data-list="navigation"></ul>
         </div>
 
+        <!-- Services -->
         <div class="footer-column">
-          <h4>Services</h4>
-          <ul class="footer-links">
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">UI/UX Design</a></li>
-            <li><a href="#">Mobile Apps</a></li>
-            <li><a href="#">Consulting</a></li>
-          </ul>
+          <h4>Contact</h4> <br>
+          <ul class="footer-links" data-list="services"></ul>
         </div>
 
+        <!-- Extra -->
         <div class="footer-column">
-          <h4>Contact</h4>
-          <ul class="footer-links">
-            <li><a href="mailto:hello@alexmorgan.dev">hello@alexmorgan.dev</a></li>
-            <li><a href="#">San Francisco, CA</a></li>
-          </ul>
+          <img src="images/R.png" alt="">
+          <p>🙇‍♂️ ⭐ 🙏 🌸</p>
         </div>
+
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div class="section-container">
-        <div class="footer-bottom-inner">
-          <p class="footer-copy" data-text="copyright"></p>
-        </div>
+      <div class="section-container footer-bottom-inner">
+        <p class="footer-copy" data-text="copyright"></p>
+        <p class="footer-copy" data-text="developer"></p>
       </div>
     </div>
   </footer>
+
 </template>

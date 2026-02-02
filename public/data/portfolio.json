@@ -81,27 +81,28 @@
       {
         "title": "Web Development & Laravel",
         "desc": "Designing and developing dynamic, scalable websites using Laravel with clean backend architecture, database integration, authentication, and responsive frontend design.",
-        "icon": "code"
+        "icon": "/images/skills/optimized/source-code.png"
       },
       {
         "title": "Frontend & Landing Pages",
         "desc": "Building modern landing pages and frontend projects using HTML, CSS, and JavaScript with a strong focus on responsiveness, layout structure, and user interaction.",
-        "icon": "design"
+        "icon": "/images/skills/optimized/laptop.png"
       },
       {
         "title": "SEO Optimization",
         "desc": "Improving website visibility through on-page SEO, performance optimization, proper structure, and search-engine-friendly content practices.",
-        "icon": "stack"
+        "icon": "/images/skills/optimized/search--v1.png"
       },
       {
         "title": "Embedded Systems Basics",
         "desc": "Developing basic embedded projects using microcontrollers, sensors, and logic-based programming to understand hardware–software interaction.",
-        "icon": "speed"
+        "icon": "/images/skills/optimized/chip.png"
       }
     ],
     "progress": [
       {
         "category": "Web & Full Stack Development",
+        "icon": "/images/skills/src/star.png",
         "items": [
           {
             "name": "HTML & CSS",
@@ -127,7 +128,7 @@
       },
       {
         "category": "Programming Languages",
-        "icon": "/icons/web-dev.svg",
+        "icon": "/images/skills/src/source-code.png",
         "items": [
           {
             "name": "C",
@@ -153,6 +154,7 @@
       },
       {
         "category": "Tools & Technologies",
+        "icon": "/images/skills/src/tools.png",
         "items": [
           {
             "name": "Git & GitHub",
@@ -174,6 +176,7 @@
       },
       {
         "category": "Android & Cross-Platform Development",
+        "icon": "/images/skills/src/android-os.png",
         "items": [
           {
             "name": "Flutter",
@@ -191,6 +194,7 @@
       },
       {
         "category": "SEO & Optimization",
+        "icon": "/images/skills/src/search.png",
         "items": [
           {
             "name": "On-Page SEO",
@@ -258,6 +262,7 @@
     "avatar": "https://avatars.githubusercontent.com/u/163174930?v=4",
     "profileUrl": "https://github.com/Amar1912"
   },
+  
   "resume": {
     "experience": [
       {
@@ -325,226 +330,269 @@
         "MySQL"
       ],
       "images": [
-        "https://images.unsplash.com/photo-1502920514313-52581002a659?w=1200&h=800&fit=crop"
+        "/images/projects/shivsai.png"
       ],
       "liveUrl": "https://github.com/Amar1912/Sai_Tours",
       "repoUrl": "https://github.com/Amar1912/Sai_Tours",
       "featured": true
     },
     {
-  "id": "laravel-blog-website",
-  "title": "Laravel Blog Website",
-  "category": "Web Application",
-  "shortDescription": "A dynamic blog website built with Laravel featuring user authentication, post management, and a clean responsive UI.",
-  "fullDescription": "Laravel Blog Website is a full-stack blogging platform developed using Laravel. It allows users to create, edit, and manage blog posts with authentication, secure routing, and database-driven content management.",
-  "problem": "Static blog systems lack scalability, authentication, and structured content management.",
-  "solution": "Developed a Laravel-based blog system with MVC architecture, database integration, authentication, and CRUD functionality.",
-  "impact": [
-    "Improved content management efficiency",
-    "Secure user authentication and authorization",
-    "Scalable backend architecture"
-  ],
-  "techStack": [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "PHP",
-    "Laravel",
-    "MySQL"
-  ],
-  "images": [
-    "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop"
-  ],
-  "liveUrl": "",
-  "repoUrl": "https://github.com/Amar1912/Laravel_Blog_Website",
-  "featured": true
-},
-{
-  "id": "beauty-parlor-website",
-  "title": "Beauty Parlor Management Website",
-  "category": "Web Application",
-  "shortDescription": "A PHP and MySQL-based beauty parlor website with appointment booking and service management.",
-  "fullDescription": "Beauty Parlor Management Website is a dynamic web application developed using PHP and MySQL. It allows customers to view services and book appointments, while admins can manage services, bookings, and customer data through a structured backend.",
-  "problem": "Manual appointment handling and service management leads to scheduling errors and inefficiency.",
-  "solution": "Built a PHP–MySQL based system with online booking, database-driven services, and an admin management panel.",
-  "impact": [
-    "Simplified appointment booking process",
-    "Improved service management",
-    "Reduced manual scheduling errors"
-  ],
-  "techStack": [
-    "HTML",
-    "CSS",
-    "PHP",
-    "MySQL"
-  ],
-  "images": [
-    "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&h=800&fit=crop"
-  ],
-  "liveUrl": "",
-  "repoUrl": "https://github.com/Amar1912/beauty_parlor",
-  "featured": false
-},
-{
-  "id": "hospital-management-system",
-  "title": "Hospital Management System",
-  "category": "Web Application",
-  "shortDescription": "A PHP and MySQL based Hospital Management System for patient records, appointments, and staff management.",
-  "fullDescription": "Hospital Management System is a dynamic web application developed using PHP and MySQL. It provides modules for patient registration, doctor scheduling, appointment handling, and basic reporting, streamlining hospital operations and improving data accessibility.",
-  "problem": "Manual record keeping and appointment management in a hospital leads to inefficiency and errors.",
-  "solution": "Developed a comprehensive PHP–MySQL system that automates patient data management, appointment scheduling, doctor availability tracking, and basic reporting.",
-  "impact": [
-    "Reduced manual paperwork and errors",
-    "Faster appointment scheduling",
-    "Improved patient and staff data management"
-  ],
-  "techStack": [
-    "HTML",
-    "CSS",
-    "PHP",
-    "MySQL"
-  ],
-  "images": [
-    "https://images.unsplash.com/photo-1580281657529-1be6ccb1d80f?w=1200&h=800&fit=crop"
-  ],
-  "liveUrl": "",
-  "repoUrl": "https://github.com/Amar1912/Hospital-management-system-",
-  "featured": false
-},
-{
-  "id": "blinkit-clone-app",
-  "title": "Blinkit Clone App",
-  "category": "Mobile Application",
-  "shortDescription": "A basic Flutter app inspired by Blinkit with simple UI screens.",
-  "problem": "To understand basic mobile app layout and navigation using Flutter.",
-  "solution": "Created a simple multi-page Flutter application with product listing and cart-style UI.",
-  "techStack": [
-    "Flutter",
-    "Dart"
-  ],
-  "images": [
-    "https://images.unsplash.com/photo-1580894908361-f08c20a0fda2?w=1200&h=800&fit=crop"
-  ],
-  "repoUrl": "https://github.com/Amar1912/Blinkit_Clone_App",
-  "featured": false
-},
-{
-  "id": "employee-management",
-  "title": "Employee Management System",
-  "category": "Web Application",
-  "shortDescription": "A PHP and MySQL based Employee Management System for simple CRUD operations.",
-  "fullDescription": "Employee Management System is a web application built with PHP and MySQL that allows users to manage employee records including adding, editing, and deleting employee details in a structured database.",
-  "problem": "Managing employee data manually leads to disorganization and errors.",
-  "solution": "Developed a simple PHP application with MySQL database to perform CRUD operations on employee records.",
-  "impact": [
-    "Streamlined employee data handling",
-    "Improved basic record organization"
-  ],
-  "techStack": [
-    "HTML",
-    "CSS",
-    "PHP",
-    "MySQL"
-  ],
-  "images": [
-    "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=1200&h=800&fit=crop"
-  ],
-  "liveUrl": "",
-  "repoUrl": "https://github.com/Amar1912/Employee_Management",
-  "featured": false
-},
-{
-  "id": "insta-profile-clone",
-  "title": "Instagram Profile Clone",
-  "category": "Web Application",
-  "shortDescription": "A static Instagram profile clone built with HTML, CSS & JavaScript.",
-  "fullDescription": "Instagram Profile Clone is a frontend project replicating the UI layout of an Instagram user profile page using HTML, CSS, and JavaScript. It demonstrates responsive design and interactive elements typical of a social media profile interface.",
-  "problem": "To learn frontend layout skills and practice structuring a real-world UI using standard web technologies.",
-  "solution": "Built a pixel-perfect Instagram profile clone with navigation, profile header, posts grid, and interactive elements using HTML, CSS, and JavaScript.",
-  "impact": [
-    "Enhanced UI/UX layout skills",
-    "Improved understanding of CSS positioning and responsive design"
-  ],
-  "techStack": [
-    "HTML",
-    "CSS",
-    "JavaScript"
-  ],
-  "images": [
-    "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=1200&h=800&fit=crop"
-  ],
-  "liveUrl": "",
-  "repoUrl": "https://github.com/Amar1912/Insta-profile",
-  "featured": false
-},
-{
-  "id": "coffee-web-landing-page",
-  "title": "Coffee Web Landing Page",
-  "category": "Web Design",
-  "shortDescription": "A responsive coffee shop landing page built using HTML, CSS, and JavaScript.",
-  "fullDescription": "Coffee Web Landing Page is a frontend project creating a modern and responsive landing page for a coffee shop. It showcases clean layout design, attractive visuals, and interactive elements using HTML, CSS, and JavaScript.",
-  "problem": "To practice UI design and responsive layout using core web technologies.",
-  "solution": "Designed and developed a coffee shop landing page with sections for features, menu highlights, customer testimonials, and contact call-to-action.",
-  "impact": [
-    "Demonstrated responsive UI / UX layout",
-    "Showcased visual design and frontend skills"
-  ],
-  "techStack": [
-    "HTML",
-    "CSS",
-    "JavaScript"
-  ],
-  "images": [
-    "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&h=800&fit=crop"
-  ],
-  "liveUrl": "",
-  "repoUrl": "https://github.com/Amar1912/coffee-web-landing-page",
-  "featured": false
-},{
-  "id": "gym-web-project",
-  "title": "Gym Web Project",
-  "category": "Web Design",
-  "shortDescription": "A responsive gym website built with HTML, CSS, and JavaScript.",
-  "fullDescription": "Gym Web Project is a static gym landing website created using HTML, CSS, and JavaScript. It features sections like services, trainers, membership plans, testimonials, and contact call-to-action to showcase a complete gym promotional site.",
-  "problem": "To showcase frontend layout, responsive design, and interactive UI elements for a fitness/gym brand.",
-  "solution": "Designed and developed a multi-section, clean, and modern gym website with responsive layout and UI interactions using foundational web technologies.",
-  "impact": [
-    "Improved frontend design and responsiveness skills",
-    "Demonstrated ability to structure multi-section web pages"
-  ],
-  "techStack": [
-    "HTML",
-    "CSS",
-    "JavaScript"
-  ],
-  "images": [
-    "https://images.unsplash.com/photo-1554284126-aa88f22d8d16?w=1200&h=800&fit=crop"
-  ],
-  "liveUrl": "",
-  "repoUrl": "https://github.com/Amar1912/Gym-Web-Project",
-  "featured": false
-}
-
-
+      "id": "laravel-blog-website",
+      "title": "Laravel Blog Website",
+      "category": "Web Application",
+      "shortDescription": "A dynamic blog website built with Laravel featuring user authentication, post management, and a clean responsive UI.",
+      "fullDescription": "Laravel Blog Website is a full-stack blogging platform developed using Laravel. It allows users to create, edit, and manage blog posts with authentication, secure routing, and database-driven content management.",
+      "problem": "Static blog systems lack scalability, authentication, and structured content management.",
+      "solution": "Developed a Laravel-based blog system with MVC architecture, database integration, authentication, and CRUD functionality.",
+      "impact": [
+        "Improved content management efficiency",
+        "Secure user authentication and authorization",
+        "Scalable backend architecture"
+      ],
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "Laravel",
+        "MySQL"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/Laravel_Blog_Website",
+      "featured": true
+    },
+    {
+      "id": "beauty-parlor-website",
+      "title": "Beauty Parlor Management Website",
+      "category": "Web Application",
+      "shortDescription": "A PHP and MySQL-based beauty parlor website with appointment booking and service management.",
+      "fullDescription": "Beauty Parlor Management Website is a dynamic web application developed using PHP and MySQL. It allows customers to view services and book appointments, while admins can manage services, bookings, and customer data through a structured backend.",
+      "problem": "Manual appointment handling and service management leads to scheduling errors and inefficiency.",
+      "solution": "Built a PHP–MySQL based system with online booking, database-driven services, and an admin management panel.",
+      "impact": [
+        "Simplified appointment booking process",
+        "Improved service management",
+        "Reduced manual scheduling errors"
+      ],
+      "techStack": [
+        "HTML",
+        "CSS",
+        "PHP",
+        "MySQL"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/beauty_parlor",
+      "featured": false
+    },
+    {
+      "id": "hospital-management-system",
+      "title": "Hospital Management System",
+      "category": "Web Application",
+      "shortDescription": "A PHP and MySQL based Hospital Management System for patient records, appointments, and staff management.",
+      "fullDescription": "Hospital Management System is a dynamic web application developed using PHP and MySQL. It provides modules for patient registration, doctor scheduling, appointment handling, and basic reporting, streamlining hospital operations and improving data accessibility.",
+      "problem": "Manual record keeping and appointment management in a hospital leads to inefficiency and errors.",
+      "solution": "Developed a comprehensive PHP–MySQL system that automates patient data management, appointment scheduling, doctor availability tracking, and basic reporting.",
+      "impact": [
+        "Reduced manual paperwork and errors",
+        "Faster appointment scheduling",
+        "Improved patient and staff data management"
+      ],
+      "techStack": [
+        "HTML",
+        "CSS",
+        "PHP",
+        "MySQL"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1580281657529-1be6ccb1d80f?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/Hospital-management-system-",
+      "featured": false
+    },
+    {
+      "id": "blinkit-clone-app",
+      "title": "Blinkit Clone App",
+      "category": "Mobile Application",
+      "shortDescription": "A basic Flutter app inspired by Blinkit with simple UI screens.",
+      "problem": "To understand basic mobile app layout and navigation using Flutter.",
+      "solution": "Created a simple multi-page Flutter application with product listing and cart-style UI.",
+      "techStack": [
+        "Flutter",
+        "Dart"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1580894908361-f08c20a0fda2?w=1200&h=800&fit=crop"
+      ],
+      "repoUrl": "https://github.com/Amar1912/Blinkit_Clone_App",
+      "featured": false
+    },
+    {
+      "id": "employee-management",
+      "title": "Employee Management System",
+      "category": "Web Application",
+      "shortDescription": "A PHP and MySQL based Employee Management System for simple CRUD operations.",
+      "fullDescription": "Employee Management System is a web application built with PHP and MySQL that allows users to manage employee records including adding, editing, and deleting employee details in a structured database.",
+      "problem": "Managing employee data manually leads to disorganization and errors.",
+      "solution": "Developed a simple PHP application with MySQL database to perform CRUD operations on employee records.",
+      "impact": [
+        "Streamlined employee data handling",
+        "Improved basic record organization"
+      ],
+      "techStack": [
+        "HTML",
+        "CSS",
+        "PHP",
+        "MySQL"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/Employee_Management",
+      "featured": false
+    },
+    {
+      "id": "insta-profile-clone",
+      "title": "Instagram Profile Clone",
+      "category": "Web Application",
+      "shortDescription": "A static Instagram profile clone built with HTML, CSS & JavaScript.",
+      "fullDescription": "Instagram Profile Clone is a frontend project replicating the UI layout of an Instagram user profile page using HTML, CSS, and JavaScript. It demonstrates responsive design and interactive elements typical of a social media profile interface.",
+      "problem": "To learn frontend layout skills and practice structuring a real-world UI using standard web technologies.",
+      "solution": "Built a pixel-perfect Instagram profile clone with navigation, profile header, posts grid, and interactive elements using HTML, CSS, and JavaScript.",
+      "impact": [
+        "Enhanced UI/UX layout skills",
+        "Improved understanding of CSS positioning and responsive design"
+      ],
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/Insta-profile",
+      "featured": false
+    },
+    {
+      "id": "coffee-web-landing-page",
+      "title": "Coffee Web Landing Page",
+      "category": "Web Design",
+      "shortDescription": "A responsive coffee shop landing page built using HTML, CSS, and JavaScript.",
+      "fullDescription": "Coffee Web Landing Page is a frontend project creating a modern and responsive landing page for a coffee shop. It showcases clean layout design, attractive visuals, and interactive elements using HTML, CSS, and JavaScript.",
+      "problem": "To practice UI design and responsive layout using core web technologies.",
+      "solution": "Designed and developed a coffee shop landing page with sections for features, menu highlights, customer testimonials, and contact call-to-action.",
+      "impact": [
+        "Demonstrated responsive UI / UX layout",
+        "Showcased visual design and frontend skills"
+      ],
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/coffee-web-landing-page",
+      "featured": false
+    },
+    {
+      "id": "gym-web-project",
+      "title": "Gym Web Project",
+      "category": "Web Design",
+      "shortDescription": "A responsive gym website built with HTML, CSS, and JavaScript.",
+      "fullDescription": "Gym Web Project is a static gym landing website created using HTML, CSS, and JavaScript. It features sections like services, trainers, membership plans, testimonials, and contact call-to-action to showcase a complete gym promotional site.",
+      "problem": "To showcase frontend layout, responsive design, and interactive UI elements for a fitness/gym brand.",
+      "solution": "Designed and developed a multi-section, clean, and modern gym website with responsive layout and UI interactions using foundational web technologies.",
+      "impact": [
+        "Improved frontend design and responsiveness skills",
+        "Demonstrated ability to structure multi-section web pages"
+      ],
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1554284126-aa88f22d8d16?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/Gym-Web-Project",
+      "featured": false
+    },
+    {
+      "id": "loan-calculator",
+      "title": "Loan Calculator",
+      "category": "Web Tool",
+      "shortDescription": "A simple web-based loan calculator built with HTML, CSS, and JavaScript.",
+      "fullDescription": "Loan Calculator is a frontend web tool built using HTML, CSS, and JavaScript that calculates monthly payments, total payment, and interest cost based on loan amount, interest rate, and tenure inputs. It demonstrates basic form handling and dynamic calculations in the browser.",
+      "problem": "Users need a quick way to estimate loan payments without using spreadsheets or manual formulas.",
+      "solution": "Created an interactive web form that takes loan parameters and outputs monthly payment estimates in real time.",
+      "impact": [
+        "Helped understand DOM interaction and form validation",
+        "Practiced basic algorithm implementation in JavaScript"
+      ],
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1581093458796-b7baf17c7e37?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/mini-projects/tree/main/project%2014%20-%20loan%20calculator",
+      "featured": false
+    },
+    {
+      "id": "html-css-js-mini-projects",
+      "title": "20 Mini Projects (HTML, CSS & JavaScript)",
+      "category": "Frontend Practice",
+      "shortDescription": "A collection of 20 mini projects built using core HTML, CSS, and JavaScript to practice frontend fundamentals.",
+      "fullDescription": "This repository contains 20 small frontend projects developed using HTML, CSS, and JavaScript. The projects include calculators, clocks, to-do apps, UI components, form validation, and interactive web tools. The goal was to strengthen core JavaScript logic, DOM manipulation, and responsive UI design.",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "impact": [
+        "Improved JavaScript logic and DOM manipulation skills",
+        "Strengthened frontend fundamentals through hands-on practice",
+        "Built reusable UI components and utilities"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&h=800&fit=crop"
+      ],
+      "liveUrl": "",
+      "repoUrl": "https://github.com/Amar1912/mini-projects",
+      "featured": false
+    }
   ],
   "testimonials": [
     {
       "name": "Vishal Kaklij",
       "role": "Founder, Shiv Sai Tours",
-      "quote": "Amar delivered a clean, professional website that perfectly represents our tours and travel business. The site is responsive, easy to use, and helped us establish a strong online presence.",
-      "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop"
+      "quote": "Amar delivered a clean, professional website that perfectly represents our tours and travel business. The site is responsive, easy to use, and helped us establish a strong online presence."
     },
     {
       "name": "Samruddhi Jadhav",
       "role": "Content Creator & Blogger",
-      "quote": "The blog website Amar developed is smooth, well-structured, and easy to manage. The design and frontend flow made content publishing simple and visually appealing.",
-      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+      "quote": "The blog website Amar developed is smooth, well-structured, and easy to manage. The design and frontend flow made content publishing simple and visually appealing."
     },
     {
       "name": "Vinod Nikam",
       "role": "Business Owner",
-      "quote": "Amar optimized our website with proper SEO practices, improving structure, performance, and visibility. The results were noticeable, and the overall site quality improved significantly.",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+      "quote": "Amar optimized our website with proper SEO practices, improving structure, performance, and visibility. The results were noticeable, and the overall site quality improved significantly."
     }
   ],
   "certificationsPage": {
@@ -569,15 +617,15 @@
     },
     {
       "platform": "LinkedIn",
-      "url": "https://linkedin.com/in/AmarDhadbale"
+      "url": "https://www.linkedin.com/in/amar-dhadbale-719902303"
     },
     {
       "platform": "Twitter",
       "url": "https://twitter.com/AmarDhadbaledesign"
     },
     {
-      "platform": "Dribbble",
-      "url": "https://dribbble.com/AmarDhadbale"
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/amar_d_1523?igsh=M2Fmem00MjFtMjdl"
     }
   ]
 }

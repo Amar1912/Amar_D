@@ -1,20 +1,27 @@
 {
   "brand": {
-    "name": "Alex Morgan",
-    "tagline": "Designing delightful digital experiences"
+    "name": "Amar Adinath Dhadbale",
+    "tagline": "A curious Web Developer who loves building simple, beautiful, and functional websites.",
+    "logo": "assets/images/logo.png"
   },
+
   "navigation": [
     { "label": "Home", "url": "index.html" },
+    { "label": "About Us", "url": "about.html" },
     { "label": "Projects", "url": "projects.html" },
-    { "label": "Journey", "url": "journey.html" },
-    { "label": "Contact", "url": "contact.html" },
-    { "label": "Certifications", "url": "certifications.html" }
+    { "label": "journey", "url": "journey.html" },
+    { "label": "certifications", "url": "certifications.html" }
   ],
-  "social": [
-    { "label": "GitHub", "url": "https://github.com/your-username" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/your-profile" },
-    { "label": "Instagram", "url": "https://www.instagram.com/your-profile" }
-  ],
-  "copyright": "© 2026 Alex Morgan. All rights reserved.",
-  "note": ""
+
+ "services": [
+  { "label": "📞 :- +91 9579703674", "url": "tel:+919579703674" },
+  { "label": "📧:- amardhadbale@gmail.com", "url": "mailto:amardhadbale@gmail.com" },
+  { "label": "🔗 : in/amar-dhadbale-71990", "url": "https://www.linkedin.com/in/amar-dhadbale-719902303" },
+  { "label": "💻 :- github.com/Amar1912", "url": "https://github.com/Amar1912" },
+  { "label": "📸 :- Instagram", "url": "https://www.instagram.com/amar_d_1523?igsh=M2Fmem00MjFtMjdl" }
+],
+
+
+  "copyright": "© 2026 Amar Dhadbale. All Rights Reserved.",
+  "developer": "Developed by Amar Dhadbale"
 }
