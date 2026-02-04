@@ -457,6 +457,8 @@
           }
 
           itemsWrap.appendChild(itFrag);
+          itRoot.classList.add('animated');
+
         });
       }
 
