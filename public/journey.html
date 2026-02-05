@@ -19,6 +19,70 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ===============================
+   RESUME SECTION – MOBILE FIX
+=============================== */
+
+@media (max-width: 768px) {
+
+  /* Stack columns */
+  .resume-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+
+  /* Reduce spacing */
+  .resume-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+  }
+
+  /* Card spacing */
+  .resume-item {
+    padding: 24px 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Disable side animation (causes overflow) */
+  .resume-item:hover {
+    transform: none !important;
+  }
+
+  /* Improve text readability */
+  .resume-title {
+    font-size: 1.1rem;
+  }
+
+  .resume-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Center section */
+  .resume-section {
+    text-align: left;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+
+  .resume-item {
+    padding: 20px 16px;
+  }
+
+  .resume-column h3 {
+    font-size: 1.2rem;
+  }
+
+  .resume-period {
+    font-size: 0.75rem;
+  }
+}
+
+  </style>
 </head>
 
 <body>
